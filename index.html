@@ -299,7 +299,7 @@
       <div class="grid">
         <div class="card reveal">
           <div class="card-media" data-golf>
-            <img class="gm-img" src="assets/golf/1.png" alt="Passive exosuit for golf swing performance" loading="lazy">
+            <img class="gm-img" src="assets/golf/photo.jpg" alt="Passive exosuit for golf swing performance" loading="lazy">
             <video class="gm-vid" muted playsinline preload="none"></video>
             <span class="gm-hint">&#9654; Hover to play</span>
           </div>
@@ -642,13 +642,13 @@
     })();
   </script>
 
-  <!-- Golf card: on hover, play videos 2 -> 3 -> 4 in order (loops while hovering) -->
+  <!-- Golf card: on hover, play videos 1 -> 2 -> 3 -> 4 once, then return to the photo -->
   <script>
     (function(){
       var box = document.querySelector('[data-golf]');
       if(!box) return;
       var vid = box.querySelector('.gm-vid');
-      var playlist = ['assets/golf/2.mp4','assets/golf/3.mp4','assets/golf/4.mp4'];
+      var playlist = ['assets/golf/1.mp4','assets/golf/2.mp4','assets/golf/3.mp4','assets/golf/4.mp4'];
       var idx = 0, on = false;
       function playFrom(i){
         if(!on) return;
@@ -657,7 +657,8 @@
       }
       vid.addEventListener('ended', function(){
         if(!on) return;
-        playFrom(idx < playlist.length - 1 ? idx + 1 : 0);
+        if(idx < playlist.length - 1){ playFrom(idx + 1); }
+        else { stop(); }   // finished the sequence once -> back to the photo
       });
       function start(){ if(on) return; on = true; box.classList.add('playing'); playFrom(0); }
       function stop(){ on = false; box.classList.remove('playing'); try{ vid.pause(); vid.removeAttribute('src'); vid.load(); }catch(e){} }
