@@ -207,6 +207,9 @@
     /* ---------- Reveal animation (safe) ---------- */
     .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
     .js .reveal.visible{opacity:1;transform:none;}
+    .lead.tw-caret::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--teal);
+      margin-left:2px;vertical-align:-2px;animation:tw-blink .9s steps(1,end) infinite;}
+    @keyframes tw-blink{50%{opacity:0;}}
 
     /* ---------- Responsive ---------- */
     @media (max-width:720px){
@@ -274,7 +277,7 @@
   <section id="about">
     <div class="container">
       <h2 class="reveal">About</h2>
-      <p class="lead reveal">Hello, and welcome to my digital space! I am Ali, a biomechanics expert deeply
+      <p class="lead" data-tw>Hello, and welcome to my digital space! I am Ali, a biomechanics expert deeply
         passionate about working at the intersection of <strong>sports and movement biomechanics</strong> and
         <strong>wearable robotics</strong>. My research focuses on designing and biomechanically validating
         exosuits and assistive devices that actively improve human movement, dynamic balance, and athletic
@@ -665,6 +668,45 @@
       box.addEventListener('mouseenter', start);
       box.addEventListener('mouseleave', stop);
       box.addEventListener('click', function(){ if(on){ stop(); } else { start(); } });
+    })();
+  </script>
+
+  <!-- About: typewriter effect — types out when the section scrolls into view, preserving bold -->
+  <script>
+    (function(){
+      var el = document.querySelector('[data-tw]');
+      if(!el) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var segs = [];
+      Array.prototype.forEach.call(el.childNodes, function(n){
+        if(n.nodeType === 3){ if(n.textContent){ segs.push({t:n.textContent, tag:null}); } }
+        else if(n.nodeType === 1){ segs.push({t:n.textContent, tag:n.tagName}); }
+      });
+      if(!segs.length || reduce){ return; }
+      el.style.minHeight = el.offsetHeight + 'px';   // reserve space so the page doesn't jump
+      el.textContent = '';
+      el.classList.add('tw-caret');
+      var PER = 2, DELAY = 15, si = 0, ci = 0, holder = null, started = false;
+      function tick(){
+        var n = PER;
+        while(n-- > 0){
+          if(si >= segs.length){ el.classList.remove('tw-caret'); el.style.minHeight = ''; return; }
+          var seg = segs[si];
+          if(ci === 0){ holder = seg.tag ? document.createElement(seg.tag) : document.createTextNode(''); el.appendChild(holder); }
+          var ch = seg.t.charAt(ci++);
+          if(seg.tag){ holder.textContent += ch; } else { holder.data += ch; }
+          if(ci >= seg.t.length){ si++; ci = 0; }
+        }
+        setTimeout(tick, DELAY);
+      }
+      function start(){ if(started){ return; } started = true; tick(); }
+      if('IntersectionObserver' in window){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); start(); } });
+        }, {threshold:0.35});
+        io.observe(el);
+        setTimeout(start, 4000);
+      } else { start(); }
     })();
   </script>
 </body>
