@@ -3,381 +3,593 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avinash S Pramod | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Alireza Nasirzadeh, PhD | Sports Biomechanics &amp; Wearable Robotics</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio of Dr. Avinash S Pramod (Ph.D.) – Robotics Researcher specializing in wearable robotics, human–robot interaction, rehabilitation robotics, and soft robotics.">
-  <meta name="author" content="Avinash S Pramod">
-  <meta name="keywords" content="Robotics, Wearable Robotics, Human-Robot Interaction, Exoskeleton, Rehabilitation Robotics, Mobile Robotics, IIT Madras, Soft Robotics">
+  <!-- SEO -->
+  <meta name="description" content="Dr. Alireza Nasirzadeh — Research Professor in sports & movement biomechanics and wearable robotics at Chung-Ang University, Seoul. Exosuit design and biomechanical validation, gait analysis, dynamic balance, and musculoskeletal modeling." />
+  <meta name="author" content="Alireza Nasirzadeh" />
+  <meta name="keywords" content="Sports Biomechanics, Movement Biomechanics, Wearable Robotics, Exosuit, Gait Analysis, Dynamic Stability, Musculoskeletal Modeling, Rehabilitation Robotics, Chung-Ang University, Visual3D, AnyBody, Vicon" />
 
-  <!-- Open Graph (for social media + Google preview) -->
-  <meta property="og:title" content="Avinash S Pramod | Portfolio">
-  <meta property="og:description" content="Robotics Researcher | Wearable Robotics | Human–Robot Interaction | Soft Robotics">
-  <meta property="og:image" content="assets/Dr._Avinash_S._Pramod_Image.jpg">
-  <meta property="og:url" content="https://avinashspramod.github.io/">
-  <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alireza Nasirzadeh, PhD | Sports Biomechanics & Wearable Robotics" />
+  <meta property="og:description" content="Research Professor — exosuit design & biomechanical validation, gait analysis, dynamic balance, and musculoskeletal modeling." />
+  <meta property="og:url" content="https://alirezanasirzadeh.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://alirezanasirzadeh.github.io/assets/alireza.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (Logo for browser + Google) -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="canonical" href="https://alirezanasirzadeh.github.io/" />
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Inline SVG favicon (no external file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d9488'/%3E%3Ctext%20x='32'%20y='44'%20font-family='Segoe%20UI,Arial,sans-serif'%20font-size='30'%20font-weight='700'%20fill='white'%20text-anchor='middle'%3EAN%3C/text%3E%3C/svg%3E" />
 
-  <!-- ✅ Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- ✅ Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7PDKRGZHRV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7PDKRGZHRV');
-  </script>
-  <!-- ✅ End Google Analytics -->
+  <!-- Progressive-enhancement flag: ensures content is NEVER hidden if JS is off -->
+  <script>document.documentElement.className += ' js';</script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    /* Swiper styling */
-    .swiper {
-      width: 100%;
-      height: 400px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-top: 1rem;
+    :root{
+      --bg:#f5f7fa;
+      --surface:#ffffff;
+      --ink:#16242f;
+      --ink-soft:#465562;
+      --muted:#6b7a87;
+      --line:#e4e9ef;
+      --navy:#0f2a43;
+      --navy-2:#13374f;
+      --teal:#0d9488;
+      --teal-dark:#0b7d72;
+      --teal-soft:#e6f5f3;
+      --shadow:0 1px 2px rgba(16,42,67,.05), 0 8px 24px rgba(16,42,67,.06);
+      --radius:14px;
+      --maxw:1020px;
     }
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #000;
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
     }
-    .swiper-slide img, .swiper-slide iframe {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .swiper-button-next, .swiper-button-prev { color: #fff; }
-    .swiper-pagination-bullet { background: #fff; }
-  </style>
+    a{color:var(--teal-dark);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    h1,h2,h3{line-height:1.25;color:var(--navy);margin:0 0 .5rem;}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
 
-  <script>
-    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-    window.onbeforeunload = function () { window.scrollTo(0, 0); };
-  </script>
+    /* ---------- Header / hero ---------- */
+    header.hero{
+      background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,#15506b 100%);
+      color:#eaf2f7;
+      padding:64px 0 56px;
+    }
+    .hero-inner{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+    .avatar{
+      width:192px;height:192px;flex:0 0 192px;border-radius:50%;
+      object-fit:cover;object-position:center;background:#fff;
+      border:3px solid rgba(255,255,255,.4);box-shadow:0 10px 28px rgba(0,0,0,.32);
+    }
+    .socials{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+    .socials a{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eaf2f7;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;}
+    .socials a:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-2px);text-decoration:none;}
+    .socials svg{width:19px;height:19px;fill:currentColor;}
+    .hero h1{color:#fff;font-size:2.3rem;margin:0 0 .25rem;}
+    .hero .role{color:#bfe9e3;font-weight:600;font-size:1.08rem;margin:0 0 .6rem;}
+    .hero .affil{color:#cdddE7;color:#cfe0ea;margin:0 0 1rem;font-size:.98rem;}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:10px;}
+    .chip{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+      color:#eaf2f7;padding:6px 12px;border-radius:999px;font-size:.86rem;
+    }
+    .chip svg{width:15px;height:15px;fill:currentColor;opacity:.9;}
+    a.chip:hover{background:rgba(255,255,255,.20);text-decoration:none;}
+
+    /* ---------- Nav ---------- */
+    nav.bar{
+      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line);
+    }
+    nav.bar .container{display:flex;gap:4px;overflow-x:auto;padding-top:4px;padding-bottom:4px;}
+    nav.bar a{
+      color:var(--ink-soft);font-weight:600;font-size:.92rem;white-space:nowrap;
+      padding:12px 14px;border-bottom:2.5px solid transparent;
+    }
+    nav.bar a:hover{color:var(--teal-dark);text-decoration:none;border-bottom-color:var(--teal);}
+
+    /* ---------- Sections ---------- */
+    section{padding:52px 0 8px;}
+    section .container > h2{
+      font-size:1.55rem;margin-bottom:1.1rem;position:relative;padding-bottom:.5rem;
+    }
+    section .container > h2::after{
+      content:"";position:absolute;left:0;bottom:0;width:54px;height:3px;border-radius:3px;background:var(--teal);
+    }
+    .lead{font-size:1.08rem;color:var(--ink-soft);line-height:1.75;}
+
+    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:1.1rem;}
+    .tag{background:var(--teal-soft);color:var(--teal-dark);border:1px solid #c9ebe6;
+      padding:5px 12px;border-radius:999px;font-size:.85rem;font-weight:600;}
+
+    /* ---------- Cards ---------- */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
+    .card{
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:22px 22px 20px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(16,42,67,.12);}
+    .card h3{font-size:1.06rem;color:var(--navy);margin-bottom:.45rem;}
+    .card .venue{display:inline-block;margin-top:.7rem;font-size:.78rem;font-weight:600;
+      color:var(--teal-dark);background:var(--teal-soft);padding:3px 10px;border-radius:6px;}
+    .card p{margin:.3rem 0 0;color:var(--ink-soft);font-size:.95rem;}
+
+    /* ---------- Timeline (experience) ---------- */
+    .timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:24px;}
+    .tl-item{position:relative;padding-bottom:26px;}
+    .tl-item:last-child{padding-bottom:4px;}
+    .tl-item::before{content:"";position:absolute;left:-31px;top:5px;width:12px;height:12px;border-radius:50%;
+      background:var(--teal);border:2px solid #fff;box-shadow:0 0 0 2px var(--teal-soft);}
+    .tl-item .when{font-size:.82rem;font-weight:700;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.03em;}
+    .tl-item h3{font-size:1.08rem;margin:.15rem 0 .1rem;}
+    .tl-item .org{color:var(--ink-soft);font-weight:600;}
+    .tl-item p{margin:.35rem 0 0;color:var(--muted);font-size:.94rem;}
+
+    /* ---------- Education ---------- */
+    .edu{display:grid;gap:14px;}
+    .edu .card .deg{font-weight:700;color:var(--navy);}
+    .edu .card .school{color:var(--teal-dark);font-weight:600;font-size:.95rem;}
+    .edu .card .yr{float:right;color:var(--muted);font-size:.85rem;font-weight:600;}
+    .edu .card .thesis{color:var(--ink-soft);font-size:.92rem;margin-top:.5rem;}
+
+    /* ---------- Publications ---------- */
+    .count-badge{display:inline-block;background:var(--navy);color:#cfe9e4;font-size:.8rem;font-weight:700;
+      padding:3px 11px;border-radius:999px;margin-left:8px;vertical-align:middle;}
+    .pub-group{margin-bottom:1.4rem;}
+    .pub-group h3{font-size:1.05rem;color:var(--teal-dark);margin:1.2rem 0 .6rem;}
+    ol.pubs,ul.pubs{margin:0;padding-left:1.25rem;}
+    ol.pubs li,ul.pubs li{margin-bottom:.7rem;color:var(--ink-soft);font-size:.95rem;}
+    ol.pubs li b,ul.pubs li b{color:var(--ink);}
+    .journal-name{font-style:italic;color:var(--navy);}
+    .badge-hl{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--teal);
+      padding:1px 7px;border-radius:5px;margin-left:5px;vertical-align:middle;}
+
+    /* ---------- Skills ---------- */
+    .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+    .skillset{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:18px 20px;box-shadow:var(--shadow);}
+    .skillset h3{font-size:.98rem;margin-bottom:.6rem;}
+    .skillset .items{display:flex;flex-wrap:wrap;gap:7px;}
+    .skillset .items span{background:#eef2f6;border:1px solid var(--line);color:var(--ink-soft);
+      font-size:.82rem;padding:4px 10px;border-radius:7px;}
+
+    /* ---------- Two-column lists ---------- */
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:20px 22px;box-shadow:var(--shadow);}
+    .panel h3{font-size:1.02rem;margin-bottom:.7rem;}
+    .panel ul{margin:0;padding-left:1.1rem;}
+    .panel li{margin-bottom:.45rem;color:var(--ink-soft);font-size:.93rem;}
+
+    /* ---------- Contact ---------- */
+    #contact .container{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#eaf2f7;
+      border-radius:18px;padding:38px 34px;max-width:var(--maxw);}
+    #contact h2{color:#fff;}
+    #contact h2::after{background:var(--teal);}
+    #contact p{color:#cfe0ea;}
+    .contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.1rem;}
+    .contact-links a.chip{font-size:.92rem;padding:9px 16px;}
+
+    footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0 26px;}
+
+    /* ---------- Reveal animation (safe) ---------- */
+    .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
+    .js .reveal.visible{opacity:1;transform:none;}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:720px){
+      .hero{padding:46px 0 40px;}
+      .hero h1{font-size:1.85rem;}
+      .avatar{width:150px;height:150px;flex-basis:150px;}
+      .twocol{grid-template-columns:1fr;}
+      section .container > h2{font-size:1.35rem;}
+    }
+    @media print{
+      nav.bar{display:none;} body{background:#fff;}
+      .card,.panel,.skillset{box-shadow:none;}
+    }
+  </style>
 </head>
 <body>
-  <header class="reveal">
-    <div class="header-container">
-      <img src="assets/Dr._Avinash_S._Pramod_Image.jpg" alt="Avinash S Pramod" class="profile-pic" />
-      <div class="header-text">
-        <h1>Avinash S Pramod</h1>
-        <p>Robotics Researcher: Wearable Robotics | Human–Robot Interaction | Soft Robotics</p>
-        <!-- Professional Profile Icons -->
-        <div class="social-icons reveal">
-          <a href="https://scholar.google.com/citations?user=W1I1mkEAAAAJ&hl=en" target="_blank" title="Google Scholar">
-            <i class="fa-brands fa-google"></i>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <img class="avatar" src="assets/alireza.png" alt="Portrait of Alireza Nasirzadeh" width="192" height="192" />
+      <div class="hero-text">
+        <h1>Alireza Nasirzadeh, PhD</h1>
+        <p class="role">Sports &amp; Movement Biomechanics · Wearable Robotics · Exosuit Design &amp; Validation</p>
+        <p class="affil">Research Professor — Assistive &amp; Rehabilitation Robotics Laboratory,<br />
+          School of Mechanical Engineering, Chung-Ang University, Seoul, South Korea</p>
+        <div class="hero-meta">
+          <a class="chip" href="mailto:alireza@cau.ac.kr">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+            alireza@cau.ac.kr
           </a>
-          <a href="https://www.researchgate.net/profile/Avinash-S-Pramod" target="_blank" title="ResearchGate">
-            <i class="fa-brands fa-researchgate"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/avinash-s-pramod-b934b919b/?originalSubdomain=in" target="_blank" title="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://orcid.org/0000-0001-9369-458X" target="_blank" title="ORCID">
-            <i class="fa-brands fa-orcid"></i>
-          </a>
+          <span class="chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Seoul, South Korea
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+            PhD, Sports Biomechanics
+          </span>
+        </div>
+        <div class="socials">
+          <a href="https://scholar.google.com/citations?user=lY-vFacAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg></a>
+          <a href="https://www.linkedin.com/in/alireza-nasirzadeh-6ba45667/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></a>
+          <a href="http://arlab.cau.ac.kr/bbs/board.php?bo_table=sub2_2&amp;sca=1Research+Professor" target="_blank" rel="noopener" title="Lab Profile — Chung-Ang ARLab" aria-label="Lab Profile"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.07 16zm2.95-8H5.07a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a7.99 7.99 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.96 7.96 0 0 1 0 4h-3.38z"/></svg></a>
         </div>
       </div>
     </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Professional Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
+  <!-- ===== NAV ===== -->
+  <nav class="bar">
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <section id="about" class="reveal">
-    <h2>About Me</h2>
-    <p>Welcome! I am Avinash S Pramod, and I did my MS and PhD in Robotics from the Department of Engineering Design, Indian Institute of Technology Madras, and my B.Tech in Mechanical Engineering from Vimal Jyothi Engineering College. My research focuses on wearable robotics, biomechanical mechanisms, human–robot interaction, rehabilitation robotics, exosuit and exoskeleton design, mobile robotic systems, soft robotics, and serial manipulators. I specialize in the design, modeling, prototyping, and experimental validation of intelligent robotic systems, with key contributions to human-centric robotics.</p>
-  </section>
-
-  <section id="education" class="reveal">
-    <h2>Education</h2>
-    <table class="education-table reveal">
-      <thead>
-        <tr>
-          <th>Education</th>
-          <th>Year</th>
-          <th>Department</th>
-          <th>University</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>M.S + Ph.D.</td>
-          <td>1st Jan 2020 – 29th Aug 2025</td>
-          <td>Engineering Design (Robotics)</td>
-          <td>IIT Madras</td>
-        </tr>
-        <tr>
-          <td>B.Tech</td>
-          <td>17th Aug 2015 – 17th Aug 2019</td>
-          <td>Mechanical Engineering</td>
-          <td>Vimal Jyothi Engineering College, Kannur (KTU)</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Professional Experience Section -->
-  <section id="experience" class="reveal">
-    <h2>Professional Experience</h2>
-    <table class="education-table reveal">
-      <thead>
-        <tr>
-          <th>Role</th>
-          <th>Organization</th>
-          <th>Year</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Technical Advisor (SME) - Independent Consultant</td>
-          <td>HUROTICS inc., Seoul, South Korea</td>
-          <td>15th Oct 2025 - Present</td>
-          <td>Working on the project "Development of a 1-DOF drive-based three-dimensions multi-joint gait assistance exosuit".</td>
-        </tr>
-        <tr>
-          <td>Senior Research Fellow (SRF)</td>
-          <td>IIT Madras</td>
-          <td>18th Aug 2023 - 31st Aug 2025</td>
-          <td>Worked on the project "Development of a wearable upper limb exoskeleton mechanism for reducing interaction forces due to misalignment".</td>
-        </tr>
-        <tr>
-          <td>Junior Research Fellow (JRF)</td>
-          <td>IIT Madras</td>
-          <td>9th Aug 2021 - 17th Aug 2023</td>
-          <td>Worked on the project "Development of a wearable upper limb exoskeleton mechanism for reducing interaction forces due to misalignment".</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Projects Section with Sliders -->
-  <section id="projects" class="reveal">
-    <h2>Projects</h2>
-    <div class="projects-container">
-
-      <!-- Project 1 -->
-      <div class="project-card">
-        <h3>Human-Centric Wearable Upper Limb Exoskeleton</h3>
-        <p>A human-centered shoulder exoskeleton designed and developed to reduce interaction forces due to misalignment between human and robot joint axis.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/Exo_1.png" alt="Exoskeleton image"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/zWJi9I6gK5A" frameborder="0" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/b1F8KmpvuHQ" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="reveal">About</h2>
+      <p class="lead reveal">Hello, and welcome to my digital space! I am Ali, a biomechanics expert deeply
+        passionate about working at the intersection of <strong>sports and movement biomechanics</strong> and
+        <strong>wearable robotics</strong>. My research focuses on designing and biomechanically validating
+        exosuits and assistive devices that actively improve human movement, dynamic balance, and athletic
+        performance. To fully understand how the human body moves, I combine advanced biomechanical measurements
+        and detailed musculoskeletal modeling to evaluate gait, dynamic stability, and joint loading. Ultimately,
+        my goal is to translate these complex biomechanical insights into intuitive, human-centered wearable
+        technology.</p>
+      <div class="tags reveal">
+        <span class="tag">Wearable Robotics &amp; Exosuits</span>
+        <span class="tag">Gait Analysis</span>
+        <span class="tag">Dynamic Balance &amp; Stability</span>
+        <span class="tag">Musculoskeletal Modeling</span>
+        <span class="tag">Joint Loading &amp; Injury Mechanics</span>
+        <span class="tag">Rehabilitation Engineering</span>
       </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h3>Upper Limb Exoskeleton Test Bench</h3>
-        <p>A shoulder phantom for testing upper-limb exoskeletons for their maximum range of motion and self aligning capability in a controlled experimental setup.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/Phantom.png" alt="Exoskeleton Test Bench"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/D1B5tmLrpp8" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card">
-        <h3>Static Shoulder Therapy Monitoring Device</h3>
-        <p>An isometric training monitoring device equipped with a three-axis force sensor to provide real-time feedback for rehabilitation exercises.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/Force_sensor.png" alt="Force Sensor"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/OaBxNVh-mmI" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card">
-        <h3>Passive Ankle-Foot Exoskeleton</h3>
-        <p>A wearable passive ankle foot exoskeleton with a curved spring setup developed for variable resistance training during plantarflexion and dorsiflexion motion.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/AFO.png" alt="Ankle Foot Exoskeleton"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/E2KZiP1zugM" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="project-card">
-        <h3>Self-Evolving Fuzzy-Based Control of Soft Actuators</h3>
-        <p>A fuzzy-based closed-loop control for Soft Bidirectional Bending Actuator (SBBA) using visual feedback to regulate the actuator input pressure.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/Fuzzy_Control.gif" alt="Self-Evolving Fuzzy-Based Control of Soft Pneumatic Rotary Actuators"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/juYR9XNXEPs" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-      
-      <!-- Project 6 -->
-      <div class="project-card">
-        <h3>Active Ankle-Foot Exoskeleton</h3>
-        <p>A wearable active ankle foot exoskeleton having single actuator developed for resistance training (plantarflexion/ dorsiflexion and inversion/ eversion).</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/AAFO.png" alt="Ankle Foot Exoskeleton"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/91iGonJXrNg" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Project 7 -->
-      <div class="project-card">
-        <h3>Multifunctional Poultry Robot</h3>
-        <p>A robot designed to automate poultry farm tasks including sawdust racking, heating the sawdust bed, laying sawdust and cleaning.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/MRP.png" alt="Poultry Robot"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/HxEXtCrtlaw" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Project 8 -->
-      <div class="project-card">
-        <h3>Multifunctional Agricultural Robot (Seedbot)</h3>
-        <p>A semi-autonomous agricultural robot designed for sowing seeds and watering based on the soil moisture content, for efficient farming operations.</p>
-        <div class="swiper project-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/Seedbot.jpg" alt="Seedbot Robot"></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/Ix9q4BQLV1k" frameborder="0" allowfullscreen></iframe></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section id="publications" class="reveal">
-  <h2>Publications</h2>
+  <!-- ===== RESEARCH HIGHLIGHTS ===== -->
+  <section id="research">
+    <div class="container">
+      <h2 class="reveal">Research Highlights</h2>
+      <div class="grid">
+        <div class="card reveal">
+          <h3>Passive Exosuit for Golf Swing Performance</h3>
+          <p>Designed and validated a passive exosuit that harnesses elastic resistance to enhance golf-swing
+            biomechanics and power output.</p>
+          <span class="venue">Journal of Biomechanics, 2025</span>
+        </div>
+        <div class="card reveal">
+          <h3>Hip-Abduction Exosuit for Balance</h3>
+          <p>Co-developed a soft exosuit providing hip-abduction assistance that lowers metabolic cost and
+            improves balance during human walking.</p>
+          <span class="venue">Science Robotics, 2023</span>
+        </div>
+        <div class="card reveal">
+          <h3>Exosuit Assistance for Downhill Walking</h3>
+          <p>Showed that passive exosuit assistance reduces tibiofemoral joint loading and improves dynamic
+            stability during demanding downhill walking.</p>
+          <span class="venue">J. NeuroEngineering &amp; Rehabilitation, 2026</span>
+        </div>
+        <div class="card reveal">
+          <h3>H-Medi Mediolateral Balance Exosuit</h3>
+          <p>Rapid hip-abduction torque to recover mediolateral standing and walking balance without stepping —
+            for fall prevention.</p>
+          <span class="venue">Under review · Science Advances</span>
+        </div>
+        <div class="card reveal">
+          <h3>Real-Time User Adaptation (IMU + LSTM)</h3>
+          <p>Estimating user adaptation during hip-exosuit-assisted walking from wearable IMU data using
+            long short-term memory deep-learning models.</p>
+          <span class="venue">Biomimetics, 2026</span>
+        </div>
+        <div class="card reveal">
+          <h3>Biomimetic Footwear &amp; Ankle Support</h3>
+          <p>Custom high-collar shoe and active variable-compression footwear improving muscle activity,
+            leg stiffness, dynamic stability, and ankle-sprain prevention.</p>
+          <span class="venue">Biomimetics · PLOS ONE</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Journal Publications -->
-  <h3>Journal Publications</h3>
-  <ul>
-    <li><b>Pramod, A. S.</b>, Palani, P., Mohan, S., & Thondiyath, A. (2025). Stability of Glenohumeral Joint Due to Humeral Head Translation and Its Impact on Exoskeleton Design: A Review. (Accepted in <i>Sādhanā</i>).</li>
-    <li><b>Pramod, A. S.</b>, R. N. A., Mohan, S., & Thondiyath, A. (2025). Design, development, and evaluation of a novel shoulder phantom testbed for analyzing interaction forces and reachability of wearable exoskeletons. <i>Wearable Technologies</i>, 6, e24.</li>
-    <li><b>Pramod, A. S.</b>, Mohan, S., & Thondiyath, A. (2025). A modified human shoulder model considering the migration of the humeral head from the scapular glenoid fossa for the design of shoulder exoskeletons. <i>Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science</i>, 239(5), 1441-1456.</li>
-  </ul>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="reveal">Professional Experience</h2>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="when">2022 – Present</div>
+          <h3>Research Professor</h3>
+          <div class="org">Assistive &amp; Rehabilitation Robotics Laboratory, School of Mechanical Engineering,
+            Chung-Ang University — Seoul, South Korea</div>
+          <p>Biomechanical design and validation of exosuits and assistive wearable robots for gait, balance,
+            and athletic performance.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">2020 – 2021</div>
+          <h3>Biomechanist</h3>
+          <div class="org">Athlete Evaluation Department, I.R.I. National Paralympic Committee</div>
+          <p>Performance and isokinetic assessment of elite Paralympic athletes.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">2019 – 2021</div>
+          <h3>Assistant Professor</h3>
+          <div class="org">Department of Sports Biomechanics, Kharazmi University</div>
+          <p>Teaching and research in sports biomechanics and motion analysis.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">2016 – 2019</div>
+          <h3>Teaching Assistant</h3>
+          <div class="org">Department of Sports Biomechanics, Kharazmi University</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Conference Publications -->
-  <h3>Conference Publications</h3>
-  <ul>
-    <li><b>Pramod, A. S.</b>, Ravichandran, Mohan, S., & Thondiyath, A. (2025). Computational assessment of impact forces on the humerus during boxing punches: cross, hook, and uppercut. In 2025 8th International Workshop on Computational Kinematics (CK2025) (Accepted). Springer.</li>
-    <li>Adithya, R. N., <b>Pramod, A. S.</b>, & Thondiyath, A. (2025). Design of single-actuator driven upper limb shoulder exoskeleton for assisted arm elevation. In 2025 8th International Workshop on Computational Kinematics (CK2025) (Accepted). Springer.</li>
-    <li>Palani, P., Panigrahi, S., <b>Pramod, A. S.</b>, & Thondiyath, A. (2025). Prediction of muscle fatigue using force myography: A preliminary and feasibility study. In 2025 India Council International Subsections Conference (INDISCON) (Accepted). IEEE.</li>
-    <li>Usama, A., <b>Pramod, A. S.</b>, Varala, N. V., & Thondiyath, A. (2025). Design and analysis of multi-chamber, multi-curvature soft pneumatic actuator for controlled directional bending actuation. In 2025 Advances in Robotics (AIR) (Accepted). ACM. <b>(Best poster award)</b></li>
-    <li>Nirmal, A. B., <b>Pramod, A. S.</b>, & Thondiyath, A. (2024). Active 2-axis ankle-foot exoskeleton using single actuator for physiotherapy. In 2024 IEEE International Conference on Robotics and Biomimetics (ROBIO) (pp. 2019–2024). IEEE.</li>
-    <li>Kizhakkethil, A. M., Panigrahi, S., Singh, K. S., <b>Pramod, A. S.</b>, Varala, N. V., Usama, A., & Thondiyath, A. (2024). Self-evolving fuzzy-based control of soft pneumatic rotary actuators. In 2024 IEEE International Conference on Robotics and Biomimetics (ROBIO) (pp. 939–944). IEEE.</li>
-    <li><b>Pramod, A. S.</b>, Mohan, S., & Thondiyath, A. (2024, November). Design and Analysis of a Human-Centric Shoulder Exoskeleton to Improve the Range of Motion. In 2024 IEEE International Conference on Cyborg and Bionic Systems (CBS) (pp. 267-272). IEEE.</li>
-    <li><b>Pramod, A. S.</b>, Adithya, R. N., Palani, P., Varala, N. V., Panigrahi, S., Mohan, S., & Thondiyath, A. (2024, February). Development of a Novel Three-Axis Force Sensor-Based Monitoring Device for Static Shoulder Therapy. In 2024 Second International Conference on Emerging Trends in Information Technology and Engineering (ICETITE) (pp. 1-6). IEEE. <b>(Best student paper award)</b></li>
-    <li><b>Pramod, A. S.</b>, Palani, P., Mohan, S., & Thondiyath, A. (2023, May). Development of a Passive Ankle-Foot Exoskeleton for Variable Force Resistance Training. In International Workshop on Medical and Service Robots (pp. 144-151). Cham: Springer Nature Switzerland. <b>(Special mention best student paper award)</b></li>
-    <li><b>Pramod, A. S.</b>, & Jithinmon, T. V. (2019). Development of mobile dual PR arm agricultural robot. <i>Journal of Physics: Conference Series</i>, 1240, 012034.</li>
-  </ul>
+  <!-- ===== EDUCATION ===== -->
+  <section id="education">
+    <div class="container">
+      <h2 class="reveal">Education</h2>
+      <div class="edu reveal">
+        <div class="card">
+          <span class="yr">2016</span>
+          <div class="deg">Ph.D. in Sports Biomechanics</div>
+          <div class="school">Kharazmi University</div>
+          <div class="thesis"><em>Thesis:</em> Comparison of selected kinematic, kinetic, and functional
+            lower-limb variables during walking and running at different speeds among young male athletes,
+            focusing on limb dominance. (Advisor: Prof. Heydar Sadeghi)</div>
+        </div>
+        <div class="card">
+          <span class="yr">2012</span>
+          <div class="deg">M.Sc. in Physical Education &amp; Sports Sciences</div>
+          <div class="school">University of Birjand</div>
+          <div class="thesis"><em>Dissertation:</em> Architectural characteristics of the upper-extremity
+            skeletal muscles in young male table-tennis players.</div>
+        </div>
+        <div class="card">
+          <span class="yr">2009</span>
+          <div class="deg">B.Sc. in Pure Mathematics</div>
+          <div class="school">University of Birjand</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Patents -->
-  <h3>Patents</h3>
-  <ul>
-    <li><b>Pramod, A. S.</b>, Thondiyath, A., & Mohan, S. Biomimetic human shoulder phantom mechanism for testing wearable exoskeleton. Intellectual Property India, Patent Grant No. 557685, 2025.</li>
-    <li><b>Pramod, A. S.</b>, Thondiyath, A., Mohan, S., Adithya, R. N., Palani, P., Varala, N. V., Panigrahi, S. Development of a novel three-axis force sensor-based monitoring device for static shoulder therapy. Intellectual Property India, Patent Grant No. 567998, 2025.</li>
-    <li><b>Pramod, A. S.</b>, Thondiyath, A., & Mohan, S. Wearable shoulder exoskeleton. Intellectual Property India, Patent Application No. 202441041439, 2024.</li>
-    <li><b>Pramod, A. S.</b>, Beckham, A., & Thondiyath, A. Active 2-Axis Ankle-Foot Exoskeleton Using Single Actuator for Physiotherapy. Intellectual Property India, Patent Application No. 202441050130, 2024.</li>
-  </ul>
-</section>
+  <!-- ===== PUBLICATIONS ===== -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="reveal">Publications <span class="count-badge">16 peer-reviewed</span></h2>
 
-  <section id="contact" class="reveal">
-    <h2>Contact</h2>
-    <p>Name: Dr. Avinash S Pramod (Ph.D.)</p>
-    <p>Email: avinashspramod@gmail.com</p>
-    <p>Location: Kerala, India</p>
+      <div class="pub-group reveal">
+        <h3>Peer-Reviewed Journal Articles</h3>
+        <ol class="pubs">
+          <li><b>Nasirzadeh, A.</b>, et al. (2026). Biomechanical effects of passive exosuit assistance on
+            tibiofemoral loading and dynamic stability during downhill walking. <span class="journal-name">Journal of
+            NeuroEngineering and Rehabilitation</span>.</li>
+          <li>Park, C., <b>Nasirzadeh, A.</b>, Lee, K., Kim, G., &amp; Lee, G. (2026). Real-time estimation of user
+            adaptation during hip exosuit-assisted walking using wearable IMU data and LSTM modeling.
+            <span class="journal-name">Biomimetics</span>, 11(2), 96.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2025). Harnessing resistance: the impact of a passive exosuit on golf
+            swing biomechanics. <span class="journal-name">Journal of Biomechanics</span>, 192, 112958.</li>
+          <li>Choe, E., Moon, J., Ryu, J., Yang, S., <b>Nasirzadeh, A.</b>, Kong, S., Choi, Y., &amp; Lee, G. (2025).
+            Low-profile, shoe-type ankle–foot orthosis with active variable ankle stiffness via wire–fabric
+            compression mechanism. <span class="journal-name">Biomimetics</span>, 10(8), 539.</li>
+          <li>Kim, Y., Park, S., Yang, S., <b>Nasirzadeh, A.</b>, &amp; Lee, G. (2024). The interplay between
+            muscular activity and pattern recognition of electro-stimulated haptic cues during normal walking:
+            a pilot study. <span class="journal-name">Bioengineering</span>, 11, 1248.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2023). The effects of a custom-designed high-collar shoe on muscular
+            activity, dynamic stability, and leg stiffness: a biomimetic approach study.
+            <span class="journal-name">Biomimetics</span>, 8, 274.</li>
+          <li>Park, J., Nam, K., Yun, J., Moon, J., Ryu, J., Park, S., <b>Nasirzadeh, A.</b>, et al. (2023). Effect of
+            hip abduction assistance on metabolic cost and balance during human walking.
+            <span class="journal-name">Science Robotics</span>, 8(83), eade0876.<span class="badge-hl">Science Robotics</span></li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2023). Influence of circumferential ankle pressure of shoe collar on the
+            kinematics, dynamic stability, electromyography, and plantar pressure during normal walking.
+            <span class="journal-name">PLOS ONE</span>, 18(2), e0281684.</li>
+          <li><b>Nasirzadeh, A.</b> (2020). The influence of horizontal velocity on inter-lower-limbs local and global
+            asymmetry during walking. <span class="journal-name">Physical Treatments</span>, 10(2), 69–78.</li>
+          <li><b>Nasirzadeh, A.</b>, &amp; Mohseni, F. (2018). Local and global symmetry during jogging in young male
+            athletes. <span class="journal-name">Physical Treatments</span>, 8(1), 17–26.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2017). Gait symmetry and its evaluation methods: a review.
+            <span class="journal-name">Scientific Journal of Rehabilitation Medicine</span>, 6(2), 283–297.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2017). A review of selected factors that affect gait symmetry.
+            <span class="journal-name">Physical Treatments</span>, 7(1), 3–12.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2016). The influence of movement velocity on inter-lower-limbs
+            kinematical symmetry in normal walking: a pilot study.
+            <span class="journal-name">Scientific Journal of Rehabilitation Medicine</span>, 5(4), 159–172.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2015). Multivariate analysis of 200-m front crawl swimming performance
+            in young male swimmers. <span class="journal-name">Acta of Bioengineering and Biomechanics</span>,
+            17(3), 137–143.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2014). Selected anthropometrical, muscular architecture, and
+            biomechanical variables as predictors of 50-m front crawl swimming performance in young male swimmers.
+            <span class="journal-name">Science &amp; Sports</span>, 29(5), e75–e81.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2014). Relationship between sprint performance of front crawl swimming
+            and muscle fascicle length in young swimmers.
+            <span class="journal-name">Journal of Sports Science and Medicine</span>, 13(3), 550–556.</li>
+        </ol>
+      </div>
+
+      <div class="pub-group reveal">
+        <h3>Under Review</h3>
+        <ul class="pubs">
+          <li>Kim, G., Lee, S., &amp; <b>Nasirzadeh, A.</b> (under review). Rapid hip-abduction exosuit-induced torque
+            to improve mediolateral standing balance without stepping. <span class="journal-name">Science Advances</span>.</li>
+        </ul>
+      </div>
+
+      <div class="pub-group reveal">
+        <h3>Selected International Presentations</h3>
+        <ul class="pubs">
+          <li><b>Nasirzadeh, A.</b>, et al. (2026). Mediolateral balance recovery during walking using the H-Medi
+            exosuit. <i>44th International Society of Biomechanics in Sports (ISBS) Conference</i>, Loughborough, UK.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2025). Reducing tibiofemoral joint force during downhill walking using
+            various passive exosuits. <i>XXX Congress of the International Society of Biomechanics (ISB)</i>,
+            Stockholm, Sweden.</li>
+          <li><b>Nasirzadeh, A.</b> (2025). Design and validation of a passive exosuit to enhance golf-swing
+            performance. <i>7th Int. Conference on Medicine in Novel Technology and Devices</i>, Hangzhou, China.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2024). Power up the swing: a biomechanical study toward a golf exosuit.
+            <i>42nd ISBS Conference</i>, Salzburg, Austria.</li>
+          <li>Choe, E., Moon, J., Ryu, J., Yang, S., <b>Nasirzadeh, A.</b> (2024). Active variable-compression shoes
+            for ankle-sprain prevention. <i>10th IEEE RAS/EMBS BioRob</i>, Heidelberg, Germany.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2023). Passive collar stiffness of a custom-designed high-collar shoe.
+            <i>XXIX Congress of the International Society of Biomechanics (ISB)</i>, Fukuoka, Japan.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="reveal">Technical Skills</h2>
+      <div class="skills reveal">
+        <div class="skillset">
+          <h3>Motion Capture</h3>
+          <div class="items"><span>Vicon</span><span>Qualisys</span><span>OptiTrack</span></div>
+        </div>
+        <div class="skillset">
+          <h3>Modeling &amp; Analysis</h3>
+          <div class="items"><span>Visual3D</span><span>AnyBody Modeling System</span><span>MATLAB</span><span>LabVIEW</span></div>
+        </div>
+        <div class="skillset">
+          <h3>Force &amp; Pressure</h3>
+          <div class="items"><span>AMTI</span><span>Kistler</span><span>AMTI Instrumented Treadmill</span><span>Pedar</span><span>XSENSOR</span><span>FUTEK</span></div>
+        </div>
+        <div class="skillset">
+          <h3>Electromyography</h3>
+          <div class="items"><span>Delsys</span><span>Noraxon</span></div>
+        </div>
+        <div class="skillset">
+          <h3>Inertial &amp; Dynamometry</h3>
+          <div class="items"><span>Xsens IMU</span><span>Biodex System 4</span></div>
+        </div>
+        <div class="skillset">
+          <h3>Instrumentation &amp; Imaging</h3>
+          <div class="items"><span>NI myDAQ</span><span>NI USB-6255</span><span>Ultrasonography (Hitachi Aloka)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS / SERVICE ===== -->
+  <section id="awards">
+    <div class="container">
+      <h2 class="reveal">Awards &amp; Professional Activity</h2>
+      <div class="twocol reveal">
+        <div class="panel">
+          <h3>Awards &amp; Honors</h3>
+          <ul>
+            <li>Outstanding Student, Department of Sports Biomechanics, Kharazmi University (2016)</li>
+            <li>Outstanding Presentation Award in Biomechanics, First National Conference on New Findings in Sport Sciences (2015)</li>
+            <li>New Investigator Award, Sixth National Conference on Physical Education &amp; Sport Sciences (2011)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Journal Peer Review</h3>
+          <ul>
+            <li>Journal of Sports Sciences</li>
+            <li>Sports Biomechanics</li>
+            <li>International Journal of Athletic Therapy &amp; Training</li>
+            <li>PLOS ONE</li>
+            <li>IEEE Transactions on Neural Systems &amp; Rehabilitation Engineering</li>
+            <li>Physical Treatments</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Languages</h3>
+          <ul>
+            <li>Persian — native</li>
+            <li>English — professional working proficiency (IELTS 7.5 / CEFR C1; PTE Academic 81)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Coaching &amp; Certifications</h3>
+          <ul>
+            <li>Judo — Black Belt (1st Dan) &amp; Coaching Certificate</li>
+            <li>Table Tennis — Coaching Certificate</li>
+            <li>Swimming Pool Lifeguard Certificate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container reveal">
+      <h2>Contact</h2>
+      <p>I welcome collaborations and opportunities in sports biomechanics, wearable robotics, and rehabilitation engineering.</p>
+      <div class="contact-links">
+        <a class="chip" href="mailto:alireza@cau.ac.kr">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+          alireza@cau.ac.kr
+        </a>
+        <a class="chip" href="https://scholar.google.com/citations?user=lY-vFacAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+          Google Scholar
+        </a>
+        <a class="chip" href="https://www.linkedin.com/in/alireza-nasirzadeh-6ba45667/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="chip" href="http://arlab.cau.ac.kr/bbs/board.php?bo_table=sub2_2&amp;sca=1Research+Professor" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.07 16zm2.95-8H5.07a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a7.99 7.99 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.96 7.96 0 0 1 0 4h-3.38z"/></svg>
+          Lab Profile
+        </a>
+        <span class="chip">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Chung-Ang University, Seoul, South Korea
+        </span>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>Copyright © 2025 Avinash S Pramod Portfolio. All rights reserved.</p>
+    <p>© <span id="year">2026</span> Alireza Nasirzadeh · Built with GitHub Pages</p>
   </footer>
 
-  <!-- JS for Reveal Animation -->
+  <!-- Reveal-on-scroll (safe: content always shows even if this fails) -->
   <script>
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(r => observer.observe(r));
+    (function(){
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var els = document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){
+        els.forEach(function(e){e.classList.add('visible');});
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); } });
+      }, {threshold:0.12});
+      els.forEach(function(e){io.observe(e);});
+      // Failsafe: reveal everything after 2.5s no matter what
+      setTimeout(function(){els.forEach(function(e){e.classList.add('visible');});}, 2500);
+    })();
   </script>
-
-  <!-- ✅ Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    document.querySelectorAll('.project-slider').forEach(slider => {
-      new Swiper(slider, {
-        loop: true,
-        navigation: {
-          nextEl: slider.querySelector('.swiper-button-next'),
-          prevEl: slider.querySelector('.swiper-button-prev'),
-        },
-        pagination: {
-          el: slider.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-      });
-    });
-  </script>
-  <script src="script.js"></script>
 </body>
 </html>
