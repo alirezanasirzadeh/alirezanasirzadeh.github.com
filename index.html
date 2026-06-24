@@ -125,6 +125,12 @@
     .card h3{font-size:1.06rem;color:var(--navy);margin-bottom:.45rem;}
     .card .venue{display:inline-block;margin-top:.7rem;font-size:.78rem;font-weight:600;
       color:var(--teal-dark);background:var(--teal-soft);padding:3px 10px;border-radius:6px;}
+    .card a.venue{display:inline-flex;align-items:center;gap:5px;cursor:pointer;text-decoration:none;
+      transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;}
+    .card a.venue svg{width:11px;height:11px;fill:currentColor;transition:transform .2s ease;}
+    .card a.venue:hover{background:linear-gradient(120deg,#0ea5a4 0%,#3b82f6 55%,#6366f1 100%);color:#fff;
+      box-shadow:0 8px 18px -7px rgba(99,102,241,.6);transform:translateY(-1px);text-decoration:none;}
+    .card a.venue:hover svg{transform:translate(2px,-2px);}
     .card p{margin:.3rem 0 0;color:var(--ink-soft);font-size:.95rem;}
     .card-media{position:relative;width:100%;aspect-ratio:1/1;border-radius:12px;overflow:hidden;
       margin:0 0 16px;background:#0b1220;cursor:pointer;}
@@ -309,7 +315,7 @@
           <h3>Passive Exosuit for Golf Swing Performance</h3>
           <p>Designed and validated a passive exosuit that harnesses elastic resistance to enhance golf-swing
             biomechanics and power output.</p>
-          <span class="venue">Journal of Biomechanics, 2025</span>
+          <a class="venue" href="https://doi.org/10.1016/j.jbiomech.2025.112958" target="_blank" rel="noopener">Journal of Biomechanics, 2025<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
         <div class="card reveal">
           <h3>Hip-Abduction Exosuit for Balance</h3>
