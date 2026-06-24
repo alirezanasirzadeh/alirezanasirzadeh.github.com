@@ -99,6 +99,7 @@
       padding:12px 14px;border-bottom:2.5px solid transparent;
     }
     nav.bar a:hover{color:var(--teal-dark);text-decoration:none;border-bottom-color:var(--teal);}
+    nav.bar a.active{color:var(--teal-dark);border-bottom-color:var(--teal);}
 
     /* ---------- Sections ---------- */
     section{padding:52px 0 8px;}
@@ -605,6 +606,25 @@
       els.forEach(function(e){io.observe(e);});
       // Failsafe: reveal everything after 2.5s no matter what
       setTimeout(function(){els.forEach(function(e){e.classList.add('visible');});}, 2500);
+    })();
+  </script>
+
+  <!-- Active-section highlight in the nav (scroll spy) -->
+  <script>
+    (function(){
+      var links = [].slice.call(document.querySelectorAll('nav.bar a'));
+      var map = links.map(function(a){ return {a:a, el:document.getElementById(a.getAttribute('href').slice(1))}; })
+                     .filter(function(x){ return x.el; });
+      if(!map.length) return;
+      function spy(){
+        var y = window.scrollY + 90, cur = null;
+        map.forEach(function(x){ if(x.el.offsetTop <= y) cur = x; });
+        links.forEach(function(a){ a.classList.remove('active'); });
+        if(cur) cur.a.classList.add('active');
+      }
+      window.addEventListener('scroll', spy, {passive:true});
+      window.addEventListener('resize', spy);
+      spy();
     })();
   </script>
 </body>
