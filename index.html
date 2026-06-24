@@ -160,8 +160,11 @@
     ol.pubs li,ul.pubs li{margin-bottom:.7rem;color:var(--ink-soft);font-size:.95rem;}
     ol.pubs li b,ul.pubs li b{color:var(--ink);}
     .journal-name{font-style:italic;color:var(--navy);}
-    .badge-hl{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--teal);
-      padding:1px 7px;border-radius:5px;margin-left:5px;vertical-align:middle;}
+    .doi-link{display:inline-flex;align-items:center;font-size:.72rem;font-weight:700;color:#fff;
+      background:var(--teal);padding:2px 9px;border-radius:6px;margin-left:6px;vertical-align:middle;
+      white-space:nowrap;transition:background .15s ease, transform .15s ease;}
+    .doi-link::after{content:"↗";margin-left:3px;font-size:.85em;}
+    .doi-link:hover{background:var(--teal-dark);color:#fff;text-decoration:none;transform:translateY(-1px);}
 
     /* ---------- Skills ---------- */
     .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
@@ -405,47 +408,47 @@
         <ol class="pubs">
           <li><b>Nasirzadeh, A.</b>, et al. (2026). Biomechanical effects of passive exosuit assistance on
             tibiofemoral loading and dynamic stability during downhill walking. <span class="journal-name">Journal of
-            NeuroEngineering and Rehabilitation</span>.</li>
+            NeuroEngineering and Rehabilitation</span>. <a class="doi-link" href="https://doi.org/10.1186/s12984-026-02044-0" target="_blank" rel="noopener">View article</a></li>
           <li>Park, C., <b>Nasirzadeh, A.</b>, Lee, K., Kim, G., &amp; Lee, G. (2026). Real-time estimation of user
             adaptation during hip exosuit-assisted walking using wearable IMU data and LSTM modeling.
-            <span class="journal-name">Biomimetics</span>, 11(2), 96.</li>
+            <span class="journal-name">Biomimetics</span>, 11(2), 96. <a class="doi-link" href="https://www.mdpi.com/2313-7673/11/2/96" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2025). Harnessing resistance: the impact of a passive exosuit on golf
-            swing biomechanics. <span class="journal-name">Journal of Biomechanics</span>, 192, 112958.</li>
+            swing biomechanics. <span class="journal-name">Journal of Biomechanics</span>, 192, 112958. <a class="doi-link" href="https://doi.org/10.1016/j.jbiomech.2025.112958" target="_blank" rel="noopener">View article</a></li>
           <li>Choe, E., Moon, J., Ryu, J., Yang, S., <b>Nasirzadeh, A.</b>, Kong, S., Choi, Y., &amp; Lee, G. (2025).
             Low-profile, shoe-type ankle–foot orthosis with active variable ankle stiffness via wire–fabric
-            compression mechanism. <span class="journal-name">Biomimetics</span>, 10(8), 539.</li>
+            compression mechanism. <span class="journal-name">Biomimetics</span>, 10(8), 539. <a class="doi-link" href="https://www.mdpi.com/2313-7673/10/8/539" target="_blank" rel="noopener">View article</a></li>
           <li>Kim, Y., Park, S., Yang, S., <b>Nasirzadeh, A.</b>, &amp; Lee, G. (2024). The interplay between
             muscular activity and pattern recognition of electro-stimulated haptic cues during normal walking:
-            a pilot study. <span class="journal-name">Bioengineering</span>, 11, 1248.</li>
+            a pilot study. <span class="journal-name">Bioengineering</span>, 11, 1248. <a class="doi-link" href="https://www.mdpi.com/2306-5354/11/12/1248" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2023). The effects of a custom-designed high-collar shoe on muscular
             activity, dynamic stability, and leg stiffness: a biomimetic approach study.
-            <span class="journal-name">Biomimetics</span>, 8, 274.</li>
+            <span class="journal-name">Biomimetics</span>, 8, 274. <a class="doi-link" href="https://www.mdpi.com/2313-7673/8/3/274" target="_blank" rel="noopener">View article</a></li>
           <li>Park, J., Nam, K., Yun, J., Moon, J., Ryu, J., Park, S., <b>Nasirzadeh, A.</b>, et al. (2023). Effect of
             hip abduction assistance on metabolic cost and balance during human walking.
-            <span class="journal-name">Science Robotics</span>, 8(83), eade0876.<span class="badge-hl">Science Robotics</span></li>
+            <span class="journal-name">Science Robotics</span>, 8(83), eade0876. <a class="doi-link" href="https://www.science.org/doi/10.1126/scirobotics.ade0876" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2023). Influence of circumferential ankle pressure of shoe collar on the
             kinematics, dynamic stability, electromyography, and plantar pressure during normal walking.
-            <span class="journal-name">PLOS ONE</span>, 18(2), e0281684.</li>
+            <span class="journal-name">PLOS ONE</span>, 18(2), e0281684. <a class="doi-link" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0281684" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b> (2020). The influence of horizontal velocity on inter-lower-limbs local and global
-            asymmetry during walking. <span class="journal-name">Physical Treatments</span>, 10(2), 69–78.</li>
+            asymmetry during walking. <span class="journal-name">Physical Treatments</span>, 10(2), 69–78. <a class="doi-link" href="https://ptj.uswr.ac.ir/article-1-413-en.html" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, &amp; Mohseni, F. (2018). Local and global symmetry during jogging in young male
-            athletes. <span class="journal-name">Physical Treatments</span>, 8(1), 17–26.</li>
+            athletes. <span class="journal-name">Physical Treatments</span>, 8(1), 17–26. <a class="doi-link" href="https://ptj.uswr.ac.ir/article-1-336-en.html" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2017). Gait symmetry and its evaluation methods: a review.
-            <span class="journal-name">Scientific Journal of Rehabilitation Medicine</span>, 6(2), 283–297.</li>
+            <span class="journal-name">Scientific Journal of Rehabilitation Medicine</span>, 6(2), 283–297. <a class="doi-link" href="https://medrehab.sbmu.ac.ir/article_1100284.html?lang=en" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2017). A review of selected factors that affect gait symmetry.
-            <span class="journal-name">Physical Treatments</span>, 7(1), 3–12.</li>
+            <span class="journal-name">Physical Treatments</span>, 7(1), 3–12. <a class="doi-link" href="https://ptj.uswr.ac.ir/browse.php?a_id=256&amp;sid=1&amp;slc_lang=en&amp;html=1" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2016). The influence of movement velocity on inter-lower-limbs
             kinematical symmetry in normal walking: a pilot study.
-            <span class="journal-name">Scientific Journal of Rehabilitation Medicine</span>, 5(4), 159–172.</li>
+            <span class="journal-name">Scientific Journal of Rehabilitation Medicine</span>, 5(4), 159–172. <a class="doi-link" href="https://medrehab.sbmu.ac.ir/article_1100198.html?lang=en" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2015). Multivariate analysis of 200-m front crawl swimming performance
             in young male swimmers. <span class="journal-name">Acta of Bioengineering and Biomechanics</span>,
-            17(3), 137–143.</li>
+            17(3), 137–143. <a class="doi-link" href="https://actabio.pwr.edu.pl/fcp/4GBUKOQtTKlQhbx08SlkTUARAUWRuHQwFDBoIVURNWHhWFVZpCFghUHcKVigEQUw/302/public/publikacje/v17-3-2015/56.pdf" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2014). Selected anthropometrical, muscular architecture, and
             biomechanical variables as predictors of 50-m front crawl swimming performance in young male swimmers.
-            <span class="journal-name">Science &amp; Sports</span>, 29(5), e75–e81.</li>
+            <span class="journal-name">Science &amp; Sports</span>, 29(5), e75–e81. <a class="doi-link" href="https://www.sciencedirect.com/science/article/pii/S0765159714000574" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2014). Relationship between sprint performance of front crawl swimming
             and muscle fascicle length in young swimmers.
-            <span class="journal-name">Journal of Sports Science and Medicine</span>, 13(3), 550–556.</li>
+            <span class="journal-name">Journal of Sports Science and Medicine</span>, 13(3), 550–556. <a class="doi-link" href="https://www.jssm.org/jssm-13-550.xml" target="_blank" rel="noopener">View article</a></li>
         </ol>
       </div>
 
@@ -468,9 +471,9 @@
           <li><b>Nasirzadeh, A.</b> (2025). Design and validation of a passive exosuit to enhance golf-swing
             performance. <i>7th Int. Conference on Medicine in Novel Technology and Devices</i>, Hangzhou, China.</li>
           <li><b>Nasirzadeh, A.</b>, et al. (2024). Power up the swing: a biomechanical study toward a golf exosuit.
-            <i>42nd ISBS Conference</i>, Salzburg, Austria.</li>
+            <i>42nd ISBS Conference</i>, Salzburg, Austria. <a class="doi-link" href="https://commons.nmu.edu/isbs/vol42/iss1/105/" target="_blank" rel="noopener">View article</a></li>
           <li>Choe, E., Moon, J., Ryu, J., Yang, S., <b>Nasirzadeh, A.</b> (2024). Active variable-compression shoes
-            for ankle-sprain prevention. <i>10th IEEE RAS/EMBS BioRob</i>, Heidelberg, Germany.</li>
+            for ankle-sprain prevention. <i>10th IEEE RAS/EMBS BioRob</i>, Heidelberg, Germany. <a class="doi-link" href="https://doi.org/10.1109/BioRob60516.2024.10719846" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2023). Passive collar stiffness of a custom-designed high-collar shoe.
             <i>XXIX Congress of the International Society of Biomechanics (ISB)</i>, Fukuoka, Japan.</li>
         </ul>
