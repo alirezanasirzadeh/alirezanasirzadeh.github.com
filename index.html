@@ -126,6 +126,15 @@
     .card .venue{display:inline-block;margin-top:.7rem;font-size:.78rem;font-weight:600;
       color:var(--teal-dark);background:var(--teal-soft);padding:3px 10px;border-radius:6px;}
     .card p{margin:.3rem 0 0;color:var(--ink-soft);font-size:.95rem;}
+    .card-media{position:relative;width:100%;height:230px;border-radius:12px;overflow:hidden;
+      margin:0 0 16px;background:#0b1220;cursor:pointer;}
+    .card-media img,.card-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+    .card-media video{opacity:0;transition:opacity .2s ease;}
+    .card-media.playing video{opacity:1;}
+    .gm-hint{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;
+      background:rgba(11,18,32,.6);color:#fff;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px;
+      backdrop-filter:blur(4px);pointer-events:none;transition:opacity .2s ease;}
+    .card-media.playing .gm-hint{opacity:0;}
 
     /* ---------- Timeline (experience) ---------- */
     .timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:24px;}
@@ -289,6 +298,11 @@
       <h2 class="reveal">Research Highlights</h2>
       <div class="grid">
         <div class="card reveal">
+          <div class="card-media" data-golf>
+            <img class="gm-img" src="assets/golf/1.png" alt="Passive exosuit for golf swing performance" loading="lazy">
+            <video class="gm-vid" muted playsinline preload="none"></video>
+            <span class="gm-hint">&#9654; Hover to play</span>
+          </div>
           <h3>Passive Exosuit for Golf Swing Performance</h3>
           <p>Designed and validated a passive exosuit that harnesses elastic resistance to enhance golf-swing
             biomechanics and power output.</p>
@@ -625,6 +639,31 @@
       window.addEventListener('scroll', spy, {passive:true});
       window.addEventListener('resize', spy);
       spy();
+    })();
+  </script>
+
+  <!-- Golf card: on hover, play videos 2 -> 3 -> 4 in order (loops while hovering) -->
+  <script>
+    (function(){
+      var box = document.querySelector('[data-golf]');
+      if(!box) return;
+      var vid = box.querySelector('.gm-vid');
+      var playlist = ['assets/golf/2.mp4','assets/golf/3.mp4','assets/golf/4.mp4'];
+      var idx = 0, on = false;
+      function playFrom(i){
+        if(!on) return;
+        idx = i; vid.src = playlist[i];
+        var p = vid.play(); if(p && p.catch){ p.catch(function(){}); }
+      }
+      vid.addEventListener('ended', function(){
+        if(!on) return;
+        playFrom(idx < playlist.length - 1 ? idx + 1 : 0);
+      });
+      function start(){ if(on) return; on = true; box.classList.add('playing'); playFrom(0); }
+      function stop(){ on = false; box.classList.remove('playing'); try{ vid.pause(); vid.removeAttribute('src'); vid.load(); }catch(e){} }
+      box.addEventListener('mouseenter', start);
+      box.addEventListener('mouseleave', stop);
+      box.addEventListener('click', function(){ if(on){ stop(); } else { start(); } });
     })();
   </script>
 </body>
