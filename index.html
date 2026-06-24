@@ -147,6 +147,13 @@
     /* ---------- Publications ---------- */
     .count-badge{display:inline-block;background:var(--navy);color:#cfe9e4;font-size:.8rem;font-weight:700;
       padding:3px 11px;border-radius:999px;margin-left:8px;vertical-align:middle;}
+    .btn-row{margin:.4rem 0 1.7rem;}
+    .btn{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#fff;font-weight:600;
+      font-size:.95rem;padding:11px 20px;border-radius:10px;box-shadow:0 4px 14px rgba(13,148,136,.32);
+      transition:transform .15s ease, background .15s ease;}
+    .btn:hover{background:var(--teal-dark);transform:translateY(-2px);text-decoration:none;color:#fff;}
+    .btn svg{width:18px;height:18px;fill:currentColor;}
+    .btn .ext{width:15px;height:15px;opacity:.85;}
     .pub-group{margin-bottom:1.4rem;}
     .pub-group h3{font-size:1.05rem;color:var(--teal-dark);margin:1.2rem 0 .6rem;}
     ol.pubs,ul.pubs{margin:0;padding-left:1.25rem;}
@@ -385,6 +392,13 @@
   <section id="publications">
     <div class="container">
       <h2 class="reveal">Publications <span class="count-badge">16 peer-reviewed</span></h2>
+      <div class="btn-row reveal">
+        <a class="btn" href="https://scholar.google.com/citations?user=lY-vFacAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+          View all publications on Google Scholar
+          <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+        </a>
+      </div>
 
       <div class="pub-group reveal">
         <h3>Peer-Reviewed Journal Articles</h3>
