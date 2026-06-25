@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alirezanasirzadeh.github.io/sitemap.xml
