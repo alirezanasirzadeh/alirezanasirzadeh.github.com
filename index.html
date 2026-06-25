@@ -283,7 +283,7 @@
   <section id="about">
     <div class="container">
       <h2 class="reveal">About</h2>
-      <p class="lead" data-tw>Hello, my name is Ali and I'm a biomechanist.<br data-pause="3000"><br>I'm deeply
+      <p class="lead" data-tw>Hello, my name is Ali and I'm ... I still don't know who I am but I know a lot about biomechanics.<br><br>I'm deeply
         passionate about working at the intersection of <strong>sports and movement biomechanics</strong> and
         <strong>wearable robotics</strong>. My research focuses on designing and biomechanically validating
         exosuits and assistive devices that actively improve human movement, dynamic balance, and athletic
@@ -677,43 +677,54 @@
     })();
   </script>
 
-  <!-- About: typewriter effect — types out when the section scrolls into view, preserving bold -->
+  <!-- About: animated intro - types greeting, backspaces through roles, pauses, then types the bio -->
   <script>
     (function(){
       var el = document.querySelector('[data-tw]');
       if(!el) return;
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var segs = [];
-      Array.prototype.forEach.call(el.childNodes, function(n){
-        if(n.nodeType === 3){ if(n.textContent){ segs.push({t:n.textContent, tag:null}); } }
-        else if(n.nodeType === 1){
-          if(n.tagName === 'BR'){ segs.push({brk:true, pause: parseInt(n.getAttribute('data-pause'), 10) || 0}); }
-          else { segs.push({t:n.textContent, tag:n.tagName}); }
-        }
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      // Derive the bio (second paragraph) from everything after the last <br> in the static markup.
+      var nodes = Array.prototype.slice.call(el.childNodes), lastBr = -1;
+      nodes.forEach(function(n, i){ if(n.nodeType === 1 && n.nodeName === 'BR'){ lastBr = i; } });
+      var bio = [];
+      nodes.slice(lastBr + 1).forEach(function(n){
+        if(n.nodeType === 3){ if(n.textContent){ bio.push({v:n.textContent, b:false}); } }
+        else if(n.nodeType === 1){ bio.push({v:n.textContent, b:(n.nodeName === 'STRONG' || n.nodeName === 'B')}); }
       });
-      if(!segs.length || reduce){ return; }
-      el.style.minHeight = el.offsetHeight + 'px';   // reserve space so the page doesn't jump
+      // speeds (ms per character): first line slow on purpose, bio quicker
+      var SLOW = 42, DEL = 30, DOT = 120, PUNCH = 22, FAST = 11;
+      var prefix = "Hello, my name is Ali and I'm ";
+      var roles = ["a biomechanist.", "a sports scientist.", "an engineer."];
+      var ops = [{k:'tx', v:prefix, s:SLOW}];
+      roles.forEach(function(w){ ops.push({k:'tx', v:w, s:SLOW}, {k:'pa', ms:650}, {k:'de', n:w.length, s:DEL}); });
+      ops.push({k:'tx', v:'...', s:DOT}, {k:'pa', ms:1000});
+      ops.push({k:'tx', v:" I still don't know who I am but I know a lot about biomechanics.", s:PUNCH});
+      ops.push({k:'pa', ms:900}, {k:'br'}, {k:'br'});
+      bio.forEach(function(seg){ ops.push({k:'tx', v:seg.v, b:seg.b, s:FAST}); });
+      el.style.minHeight = el.offsetHeight + 'px';   // reserve final height so the page doesn't jump
       el.textContent = '';
       el.classList.add('tw-caret');
-      var PER = 2, DELAY = 15, si = 0, ci = 0, holder = null, started = false;
-      function finish(){ el.classList.remove('tw-caret'); el.style.minHeight = ''; }
+      function put(ch, bold){
+        var last = el.lastChild;
+        if(bold){
+          if(!last || last.nodeName !== 'STRONG'){ last = document.createElement('strong'); last.appendChild(document.createTextNode('')); el.appendChild(last); }
+          last.firstChild.data += ch;
+        } else {
+          if(!last || last.nodeType !== 3){ last = document.createTextNode(''); el.appendChild(last); }
+          last.data += ch;
+        }
+      }
+      function bksp(){ var last = el.lastChild; if(!last){ return; } if(last.nodeType === 3 && last.data.length > 1){ last.data = last.data.slice(0, -1); } else { el.removeChild(last); } }
+      var oi = 0, ci = 0, dl = -1, started = false;
       function tick(){
-        if(si >= segs.length){ finish(); return; }
-        var seg = segs[si];
-        if(seg.brk){            // cursor keeps blinking for the pause, then drop to a new line
-          si++; ci = 0; holder = null;
-          var go = function(){ el.appendChild(document.createElement('br')); setTimeout(tick, DELAY); };
-          if(seg.pause > 0){ setTimeout(go, seg.pause); } else { go(); }
-          return;
-        }
-        var n = PER;
-        while(n-- > 0){
-          if(ci === 0){ holder = seg.tag ? document.createElement(seg.tag) : document.createTextNode(''); el.appendChild(holder); }
-          var ch = seg.t.charAt(ci++);
-          if(seg.tag){ holder.textContent += ch; } else { holder.data += ch; }
-          if(ci >= seg.t.length){ si++; ci = 0; holder = null; break; }
-        }
-        setTimeout(tick, DELAY);
+        if(oi >= ops.length){ el.classList.remove('tw-caret'); el.style.minHeight = ''; return; }
+        var op = ops[oi];
+        if(op.k === 'pa'){ oi++; setTimeout(tick, op.ms); return; }
+        if(op.k === 'br'){ el.appendChild(document.createElement('br')); oi++; setTimeout(tick, 50); return; }
+        if(op.k === 'de'){ if(dl < 0){ dl = op.n; } if(dl > 0){ bksp(); dl--; } if(dl === 0){ dl = -1; oi++; } setTimeout(tick, op.s); return; }
+        if(ci < op.v.length){ put(op.v.charAt(ci), op.b); ci++; }
+        if(ci >= op.v.length){ ci = 0; oi++; }
+        setTimeout(tick, op.s);
       }
       function start(){ if(started){ return; } started = true; tick(); }
       if('IntersectionObserver' in window){
