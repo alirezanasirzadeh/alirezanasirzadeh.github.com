@@ -210,6 +210,25 @@
 
     footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0 26px;}
 
+    /* ---------- Cited-by (Google Scholar snapshot) ---------- */
+    .cited-by{margin-left:auto;flex:0 0 auto;align-self:center;width:240px;
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;
+      padding:14px 16px 12px;backdrop-filter:blur(6px);box-shadow:0 10px 26px rgba(0,0,0,.2);}
+    .cb-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;}
+    .cb-head>span{font-size:.9rem;font-weight:600;color:#eaf2f7;}
+    .cb-head a{font-size:.73rem;font-weight:600;color:#7dd3d2;text-decoration:none;white-space:nowrap;}
+    .cb-head a:hover{text-decoration:underline;}
+    .cb-table{font-size:.8rem;}
+    .cb-row{display:grid;grid-template-columns:1fr 36px 58px;gap:6px;align-items:baseline;padding:2px 0;}
+    .cb-row .cb-k{color:#bcdcd9;}
+    .cb-row b{text-align:right;font-weight:700;color:#fff;}
+    .cb-head-row{color:#9fb3c2;font-size:.7rem;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:4px;margin-bottom:2px;}
+    .cb-head-row span:not(:first-child){text-align:right;}
+    .cb-bars{display:flex;align-items:flex-end;gap:4px;height:40px;margin-top:12px;}
+    .cb-bars>span{flex:1;background:linear-gradient(180deg,#2dd4bf,#0d9488);border-radius:2px 2px 0 0;min-height:3px;}
+    .cb-yrs{display:flex;gap:4px;margin-top:4px;}
+    .cb-yrs>span{flex:1;text-align:center;font-size:.56rem;color:#8aa0ae;}
+
     /* ---------- Reveal animation (safe) ---------- */
     .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
     .js .reveal.visible{opacity:1;transform:none;}
@@ -222,6 +241,7 @@
       .hero{padding:46px 0 40px;}
       .hero h1{font-size:1.85rem;}
       .avatar{width:150px;height:150px;flex-basis:150px;}
+      .cited-by{margin:10px 0 0;width:100%;max-width:320px;}
       .twocol{grid-template-columns:1fr;}
       section .container > h2{font-size:1.35rem;}
     }
@@ -261,6 +281,17 @@
           <a href="https://www.linkedin.com/in/alireza-nasirzadeh-6ba45667/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></a>
           <a href="http://arlab.cau.ac.kr/bbs/board.php?bo_table=sub2_2&amp;sca=1Research+Professor" target="_blank" rel="noopener" title="Lab Profile — Chung-Ang ARLab" aria-label="Lab Profile"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.07 16zm2.95-8H5.07a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a7.99 7.99 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.96 7.96 0 0 1 0 4h-3.38z"/></svg></a>
         </div>
+      </div>
+      <div class="cited-by reveal">
+        <div class="cb-head"><span>Cited by</span><a href="https://scholar.google.com/citations?user=lY-vFacAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar &#8599;</a></div>
+        <div class="cb-table">
+          <div class="cb-row cb-head-row"><span></span><span>All</span><span>Since&nbsp;2021</span></div>
+          <div class="cb-row"><span class="cb-k">Citations</span><b>258</b><b>161</b></div>
+          <div class="cb-row"><span class="cb-k">h-index</span><b>7</b><b>6</b></div>
+          <div class="cb-row"><span class="cb-k">i10-index</span><b>5</b><b>5</b></div>
+        </div>
+        <div class="cb-bars" aria-hidden="true"><span style="height:58%"></span><span style="height:83%"></span><span style="height:83%"></span><span style="height:67%"></span><span style="height:58%"></span><span style="height:100%"></span><span style="height:94%"></span><span style="height:58%"></span></div>
+        <div class="cb-yrs" aria-hidden="true"><span>'19</span><span>'20</span><span>'21</span><span>'22</span><span>'23</span><span>'24</span><span>'25</span><span>'26</span></div>
       </div>
     </div>
   </header>
@@ -324,7 +355,7 @@
           </div>
           <h3>Exosuit Assistance for Downhill Walking</h3>
           <p>This passive exosuit reduces the knee joint loading up to 7% during descent while maintaining lateral dynamic stability.</p>
-          <a class="venue" href="https://doi.org/10.1186/s12984-026-02044-0" target="_blank" rel="noopener">J. NeuroEngineering &amp; Rehabilitation, 2026<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
+          <a class="venue" href="https://doi.org/10.1186/s12984-026-02044-0" target="_blank" rel="noopener">J. NeuroEng. Rehabil.<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
         <div class="card reveal">
           <h3>Hip-Abduction Exosuit for Balance</h3>
