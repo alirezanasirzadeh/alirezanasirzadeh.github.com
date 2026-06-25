@@ -283,7 +283,7 @@
   <section id="about">
     <div class="container">
       <h2 class="reveal">About</h2>
-      <p class="lead" data-tw>Hello, and welcome to my digital space! I am Ali, a biomechanics expert deeply
+      <p class="lead" data-tw>Hello, my name is Ali and I'm a biomechanist.<br data-pause="3000"><br>I'm deeply
         passionate about working at the intersection of <strong>sports and movement biomechanics</strong> and
         <strong>wearable robotics</strong>. My research focuses on designing and biomechanically validating
         exosuits and assistive devices that actively improve human movement, dynamic balance, and athletic
@@ -686,22 +686,32 @@
       var segs = [];
       Array.prototype.forEach.call(el.childNodes, function(n){
         if(n.nodeType === 3){ if(n.textContent){ segs.push({t:n.textContent, tag:null}); } }
-        else if(n.nodeType === 1){ segs.push({t:n.textContent, tag:n.tagName}); }
+        else if(n.nodeType === 1){
+          if(n.tagName === 'BR'){ segs.push({brk:true, pause: parseInt(n.getAttribute('data-pause'), 10) || 0}); }
+          else { segs.push({t:n.textContent, tag:n.tagName}); }
+        }
       });
       if(!segs.length || reduce){ return; }
       el.style.minHeight = el.offsetHeight + 'px';   // reserve space so the page doesn't jump
       el.textContent = '';
       el.classList.add('tw-caret');
       var PER = 2, DELAY = 15, si = 0, ci = 0, holder = null, started = false;
+      function finish(){ el.classList.remove('tw-caret'); el.style.minHeight = ''; }
       function tick(){
+        if(si >= segs.length){ finish(); return; }
+        var seg = segs[si];
+        if(seg.brk){            // cursor keeps blinking for the pause, then drop to a new line
+          si++; ci = 0; holder = null;
+          var go = function(){ el.appendChild(document.createElement('br')); setTimeout(tick, DELAY); };
+          if(seg.pause > 0){ setTimeout(go, seg.pause); } else { go(); }
+          return;
+        }
         var n = PER;
         while(n-- > 0){
-          if(si >= segs.length){ el.classList.remove('tw-caret'); el.style.minHeight = ''; return; }
-          var seg = segs[si];
           if(ci === 0){ holder = seg.tag ? document.createElement(seg.tag) : document.createTextNode(''); el.appendChild(holder); }
           var ch = seg.t.charAt(ci++);
           if(seg.tag){ holder.textContent += ch; } else { holder.data += ch; }
-          if(ci >= seg.t.length){ si++; ci = 0; }
+          if(ci >= seg.t.length){ si++; ci = 0; holder = null; break; }
         }
         setTimeout(tick, DELAY);
       }
