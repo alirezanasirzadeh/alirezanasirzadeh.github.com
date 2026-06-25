@@ -307,7 +307,7 @@
       <h2 class="reveal">Research Highlights</h2>
       <div class="grid">
         <div class="card reveal">
-          <div class="card-media" data-golf>
+          <div class="card-media" data-media data-vids="assets/golf/1.mp4,assets/golf/2.mp4,assets/golf/3.mp4,assets/golf/4.mp4">
             <img class="gm-img" src="assets/golf/photo.jpg" alt="Passive exosuit for golf swing performance" loading="lazy">
             <video class="gm-vid" muted playsinline preload="none"></video>
             <span class="gm-hint">&#9654; Hover to play</span>
@@ -317,16 +317,20 @@
           <a class="venue" href="https://doi.org/10.1016/j.jbiomech.2025.112958" target="_blank" rel="noopener">Journal of Biomechanics, 2025<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
         <div class="card reveal">
+          <div class="card-media" data-media data-vids="assets/downhill/1.mp4,assets/downhill/2.mp4">
+            <img class="gm-img" src="assets/downhill/photo.jpg" alt="Passive exosuit for downhill walking" loading="lazy">
+            <video class="gm-vid" muted playsinline preload="none"></video>
+            <span class="gm-hint">&#9654; Hover to play</span>
+          </div>
+          <h3>Exosuit Assistance for Downhill Walking</h3>
+          <p>This passive exosuit reduces the knee joint loading up to 7% during descent while maintaining lateral dynamic stability.</p>
+          <a class="venue" href="https://doi.org/10.1186/s12984-026-02044-0" target="_blank" rel="noopener">J. NeuroEngineering &amp; Rehabilitation, 2026<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
+        </div>
+        <div class="card reveal">
           <h3>Hip-Abduction Exosuit for Balance</h3>
           <p>Co-developed a soft exosuit providing hip-abduction assistance that lowers metabolic cost and
             improves balance during human walking.</p>
           <span class="venue">Science Robotics, 2023</span>
-        </div>
-        <div class="card reveal">
-          <h3>Exosuit Assistance for Downhill Walking</h3>
-          <p>Showed that passive exosuit assistance reduces tibiofemoral joint loading and improves dynamic
-            stability during demanding downhill walking.</p>
-          <span class="venue">J. NeuroEngineering &amp; Rehabilitation, 2026</span>
         </div>
         <div class="card reveal">
           <h3>H-Medi Mediolateral Balance Exosuit</h3>
@@ -650,29 +654,30 @@
     })();
   </script>
 
-  <!-- Golf card: on hover, play videos 1 -> 2 -> 3 -> 4 once, then return to the photo -->
+  <!-- Research media cards: on hover, play the card's videos in order once, then return to the photo -->
   <script>
     (function(){
-      var box = document.querySelector('[data-golf]');
-      if(!box) return;
-      var vid = box.querySelector('.gm-vid');
-      var playlist = ['assets/golf/1.mp4','assets/golf/2.mp4','assets/golf/3.mp4','assets/golf/4.mp4'];
-      var idx = 0, on = false;
-      function playFrom(i){
-        if(!on) return;
-        idx = i; vid.src = playlist[i];
-        var p = vid.play(); if(p && p.catch){ p.catch(function(){}); }
-      }
-      vid.addEventListener('ended', function(){
-        if(!on) return;
-        if(idx < playlist.length - 1){ playFrom(idx + 1); }
-        else { stop(); }   // finished the sequence once -> back to the photo
+      Array.prototype.forEach.call(document.querySelectorAll('[data-media]'), function(box){
+        var vid = box.querySelector('.gm-vid');
+        var playlist = (box.getAttribute('data-vids') || '').split(',').filter(Boolean);
+        if(!vid || !playlist.length) return;
+        var idx = 0, on = false;
+        function playFrom(i){
+          if(!on) return;
+          idx = i; vid.src = playlist[i];
+          var p = vid.play(); if(p && p.catch){ p.catch(function(){}); }
+        }
+        function stop(){ on = false; box.classList.remove('playing'); try{ vid.pause(); vid.removeAttribute('src'); vid.load(); }catch(e){} }
+        function start(){ if(on) return; on = true; box.classList.add('playing'); playFrom(0); }
+        vid.addEventListener('ended', function(){
+          if(!on) return;
+          if(idx < playlist.length - 1){ playFrom(idx + 1); }
+          else { stop(); }   // finished the sequence once -> back to the photo
+        });
+        box.addEventListener('mouseenter', start);
+        box.addEventListener('mouseleave', stop);
+        box.addEventListener('click', function(){ if(on){ stop(); } else { start(); } });
       });
-      function start(){ if(on) return; on = true; box.classList.add('playing'); playFrom(0); }
-      function stop(){ on = false; box.classList.remove('playing'); try{ vid.pause(); vid.removeAttribute('src'); vid.load(); }catch(e){} }
-      box.addEventListener('mouseenter', start);
-      box.addEventListener('mouseleave', stop);
-      box.addEventListener('click', function(){ if(on){ stop(); } else { start(); } });
     })();
   </script>
 
