@@ -136,7 +136,6 @@
     .card-media{position:relative;width:100%;aspect-ratio:1/1;border-radius:12px;overflow:hidden;
       margin:0 0 16px;background:#0b1220;cursor:pointer;}
     .card-media img,.card-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-    .card-media.fit-contain img{object-fit:contain;}
     .card-media video{opacity:0;transition:opacity .2s ease;}
     .card-media.playing video{opacity:1;}
     .gm-hint{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;
@@ -371,8 +370,8 @@
           <a class="venue" href="https://doi.org/10.1186/s12984-026-02044-0" target="_blank" rel="noopener">J. NeuroEng. Rehabil. 2026<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
         <div class="card reveal">
-          <div class="card-media fit-contain" data-media data-vids="assets/hmedi/1.mp4,assets/hmedi/2.mp4">
-            <img class="gm-img" src="assets/hmedi/photo.jpg?v=2" alt="H-Medi mediolateral balance exosuit" loading="lazy">
+          <div class="card-media" data-media data-vids="assets/hmedi/1.mp4,assets/hmedi/2.mp4">
+            <img class="gm-img" src="assets/hmedi/photo.jpg?v=3" alt="Mediolateral balance recovery with H-Medi exosuit" loading="lazy">
             <video class="gm-vid" muted playsinline preload="none"></video>
             <span class="gm-hint">&#9654; Hover to play</span>
           </div>
