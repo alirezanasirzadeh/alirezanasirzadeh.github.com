@@ -136,6 +136,8 @@
     .card-media{position:relative;width:100%;aspect-ratio:1/1;border-radius:12px;overflow:hidden;
       margin:0 0 16px;background:#0b1220;cursor:pointer;}
     .card-media img,.card-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+    .card-media.fit-contain{background:#fff;}
+    .card-media.fit-contain img{object-fit:contain;}
     .card-media video{opacity:0;transition:opacity .2s ease;}
     .card-media.playing video{opacity:1;}
     .gm-hint{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;
@@ -389,12 +391,18 @@
           <a class="venue" href="https://www.science.org/doi/10.1126/scirobotics.ade0876" target="_blank" rel="noopener">Science Robotics, 2023<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
         <div class="card reveal">
+          <div class="card-media fit-contain">
+            <img class="gm-img" src="assets/realtime/photo.jpg" alt="Metabolic cost adaptation over exposure time" loading="lazy">
+          </div>
           <h3>Real-Time User Adaptation (IMU + LSTM)</h3>
           <p>Estimating user adaptation during hip-exosuit-assisted walking from wearable IMU data using
             long short-term memory deep-learning models.</p>
           <a class="venue" href="https://www.mdpi.com/2313-7673/11/2/96" target="_blank" rel="noopener">Biomimetics, 2026<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
         <div class="card reveal">
+          <div class="card-media fit-contain">
+            <img class="gm-img" src="assets/footwear/photo.jpg" alt="High-collar shoe and ankle support test figure" loading="lazy">
+          </div>
           <h3>Biomimetic Footwear &amp; Ankle Support</h3>
           <p>Custom high-collar shoe and active variable-compression footwear to improve leg stiffness and prevent ankle sprain injuries.</p>
           <a class="venue" href="https://www.mdpi.com/2313-7673/8/3/274" target="_blank" rel="noopener">Biomimetics · PLOS ONE, 2023<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
