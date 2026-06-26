@@ -758,9 +758,9 @@
       var roles = ["a biomechanist.", "a sports scientist.", "an engineer."];
       var ops = [{k:'tx', v:prefix, s:SLOW}];
       roles.forEach(function(w){ ops.push({k:'tx', v:w, s:SLOW}, {k:'pa', ms:650}, {k:'de', n:w.length, s:DEL}); });
-      ops.push({k:'tx', v:'.', s:DOT}, {k:'pa', ms:1000}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:1000}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:1000});
+      ops.push({k:'tx', v:'.', s:DOT}, {k:'pa', ms:700}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:700}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:700});
       ops.push({k:'tx', v:" Well, I'm still figuring it out who I am, but I can break people down into forces, moments, and muscle activations", s:PUNCH});
-      ops.push({k:'pa', ms:650}, {k:'tx', v:' .', s:DOT}, {k:'pa', ms:1000}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:1000}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:1000}, {k:'tx', v:" professionally, of course.", s:PUNCH});
+      ops.push({k:'pa', ms:650}, {k:'tx', v:' .', s:DOT}, {k:'pa', ms:700}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:700}, {k:'tx', v:'.', s:DOT}, {k:'pa', ms:700}, {k:'tx', v:" professionally, of course.", s:PUNCH});
       ops.push({k:'pa', ms:900}, {k:'br'}, {k:'br'});
       bio.forEach(function(seg){ ops.push({k:'tx', v:seg.v, b:seg.b, s:FAST}); });
       el.style.minHeight = el.offsetHeight + 'px';   // reserve final height so the page doesn't jump
