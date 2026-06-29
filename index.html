@@ -180,6 +180,18 @@
     ol.pubs,ul.pubs{margin:0;padding-left:1.25rem;}
     ol.pubs li,ul.pubs li{margin-bottom:.7rem;color:var(--ink-soft);font-size:.95rem;}
     ol.pubs li b,ul.pubs li b{color:var(--ink);}
+    #journal-list li:nth-child(n+9){display:none;}
+    #journal-list.show-all li:nth-child(n+9){display:list-item;}
+    #pres-list li:nth-child(n+5){display:none;}
+    #pres-list.show-all li:nth-child(n+5){display:list-item;}
+    .more-btn{display:inline-flex;align-items:center;gap:8px;margin:.7rem 0 0;cursor:pointer;
+      background:var(--surface);border:1px solid var(--line);color:var(--teal-dark);font-weight:600;
+      font-size:.9rem;padding:8px 16px;border-radius:999px;
+      transition:background .14s ease,border-color .14s ease,transform .14s ease;}
+    .more-btn:hover{border-color:var(--teal);transform:translateY(-1px);}
+    .more-btn .chev{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;
+      stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease;}
+    .more-btn.open .chev{transform:rotate(180deg);}
     .journal-name{font-style:italic;color:var(--navy);}
     .doi-link{display:inline-flex;align-items:center;font-size:.72rem;font-weight:700;color:#fff;
       background:var(--teal);padding:2px 9px;border-radius:6px;margin-left:6px;vertical-align:middle;
@@ -498,7 +510,7 @@
 
       <div class="pub-group reveal">
         <h3>Peer-Reviewed Journal Articles</h3>
-        <ol class="pubs">
+        <ol class="pubs" id="journal-list">
           <li><b>Nasirzadeh, A.</b>, et al. (2026). Biomechanical effects of passive exosuit assistance on
             tibiofemoral loading and dynamic stability during downhill walking. <span class="journal-name">Journal of
             NeuroEngineering and Rehabilitation</span>. <a class="doi-link" href="https://doi.org/10.1186/s12984-026-02044-0" target="_blank" rel="noopener">View article</a></li>
@@ -543,6 +555,10 @@
             and muscle fascicle length in young swimmers.
             <span class="journal-name">Journal of Sports Science and Medicine</span>, 13(3), 550–556. <a class="doi-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4126291/" target="_blank" rel="noopener">View article</a></li>
         </ol>
+        <button class="more-btn" type="button" data-more="#journal-list" data-more-label="View 8 more articles" data-less-label="Show fewer">
+          <span class="more-label">View 8 more articles</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
 
       <div class="pub-group reveal">
@@ -554,8 +570,8 @@
       </div>
 
       <div class="pub-group reveal">
-        <h3>Selected International Presentations</h3>
-        <ul class="pubs">
+        <h3>Conference Presentations</h3>
+        <ul class="pubs" id="pres-list">
           <li><b>Nasirzadeh, A.</b>, et al. (2026). Mediolateral balance recovery during walking using the H-Medi
             exosuit. <i>44th International Society of Biomechanics in Sports (ISBS) Conference</i>, Loughborough, UK.</li>
           <li><b>Nasirzadeh, A.</b>, et al. (2025). Reducing tibiofemoral joint force during downhill walking using
@@ -569,7 +585,34 @@
             for ankle-sprain prevention. <i>10th IEEE RAS/EMBS BioRob</i>, Heidelberg, Germany. <a class="doi-link" href="https://doi.org/10.1109/BioRob60516.2024.10719846" target="_blank" rel="noopener">View article</a></li>
           <li><b>Nasirzadeh, A.</b>, et al. (2023). Passive collar stiffness of a custom-designed high-collar shoe.
             <i>XXIX Congress of the International Society of Biomechanics (ISB)</i>, Fukuoka, Japan.</li>
+          <li><b>Nasirzadeh, A.</b> (2021). Isokinetic analysis of elite Iranian Paralympic athletes.
+            <i>Second National Olympic &amp; Paralympic Congress</i>, Tehran, Iran.</li>
+          <li>Mohseni, F., &amp; <b>Nasirzadeh, A.</b> (2018). The effect of long-term custom-made foot orthoses on
+            foot structures in children with flexible flat feet. <i>Eleventh International Conference of Sport
+            Sciences</i>, Tehran, Iran.</li>
+          <li>Sobhkhiz, A., Farahpour, N., Sokhangooei, Y., &amp; <b>Nasirzadeh, A.</b> (2015). The effect of a
+            researcher-made soft insole on selected kinematic and kinetic variables of walking of active girls.
+            <i>First National Conference on New Findings in Sport Sciences</i>, Tehran, Iran.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2013). The progress of front crawl swimming speed performance in
+            adolescent swimmers emphasizing biomechanics, muscular architecture, and anthropometric factors.
+            <i>Second National Conference on Sports Talent Identification</i>, Tehran, Iran.</li>
+          <li>Ilbeigi, S., Yousefi, M., <b>Nasirzadeh, A.</b>, &amp; Van Gheluwe, B. (2012). The effect of gender and
+            anthropometrical parameters on the dynamics of sprint start among young elite sprinters. <i>XXX
+            International Society of Biomechanics in Sports (ISBS) Conference</i>, Melbourne, Australia.</li>
+          <li>Ilbeigi, S., <b>Nasirzadeh, A.</b>, &amp; Ehsanbakhsh, A. (2012). Relationship between sprint
+            performance of front crawl swimming and muscle fascicle length in young swimmers. <i>XXXII FMSI World
+            Congress of Sports Medicine</i>, Rome, Italy.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2011). Ultrasonographic examination of muscle architecture parameters
+            of the upper-arm muscles of table tennis players aged 40–60 years. <i>Sixth National Conference on
+            Physical Education and Sport Sciences</i>, Tehran, Iran.</li>
+          <li><b>Nasirzadeh, A.</b>, et al. (2011). Investigating the indicators of muscular architecture in
+            different parts of the brachial muscles of table tennis players. <i>First International Sports Medicine
+            Congress</i>, Isfahan, Iran.</li>
         </ul>
+        <button class="more-btn" type="button" data-more="#pres-list" data-more-label="View 10 more presentations" data-less-label="Show fewer">
+          <span class="more-label">View 10 more presentations</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -749,6 +792,21 @@
         box.addEventListener('mouseenter', start);
         box.addEventListener('mouseleave', stop);
         box.addEventListener('click', function(){ if(on){ stop(); } else { start(); } });
+      });
+    })();
+  </script>
+
+  <!-- Publications / Presentations: "View more" expand-collapse toggles -->
+  <script>
+    (function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.more-btn[data-more]'), function(btn){
+        btn.addEventListener('click', function(){
+          var t = document.querySelector(btn.getAttribute('data-more'));
+          if(!t){ return; }
+          var open = t.classList.toggle('show-all');
+          btn.classList.toggle('open', open);
+          btn.querySelector('.more-label').textContent = open ? btn.getAttribute('data-less-label') : btn.getAttribute('data-more-label');
+        });
       });
     })();
   </script>
