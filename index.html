@@ -198,16 +198,17 @@
       background:linear-gradient(135deg,rgba(14,165,164,.15),rgba(59,130,246,.15));}
     .skillset h3 .cat-ico svg{width:17px;height:17px;fill:none;stroke:currentColor;
       stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
-    .skillset .items{display:flex;flex-wrap:wrap;gap:8px;}
-    .tool{display:inline-flex;align-items:center;gap:8px;background:#f4f7fa;
-      border:1px solid var(--line);color:var(--ink);font-size:.85rem;font-weight:500;
-      padding:5px 12px 5px 5px;border-radius:9px;
+    .skillset .items{display:flex;flex-wrap:wrap;gap:10px;}
+    .logo{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;
+      background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px;
+      box-shadow:0 1px 3px rgba(22,36,47,.06);
       transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;}
-    .tool:hover{transform:translateY(-2px);box-shadow:0 7px 16px -9px rgba(22,36,47,.45);
+    .logo:hover{transform:translateY(-3px);box-shadow:0 8px 18px -9px rgba(22,36,47,.5);
       border-color:#cdd7e0;}
-    .tool .bdg{flex:0 0 24px;width:24px;height:24px;border-radius:7px;display:flex;
-      align-items:center;justify-content:center;color:#fff;font-size:.62rem;
-      font-weight:700;letter-spacing:.01em;line-height:1;}
+    .logo img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+    .logo.is-mono{padding:0;border:none;background:transparent;}
+    .logo.is-mono .mono{width:100%;height:100%;border-radius:12px;color:#fff;font-weight:800;
+      font-size:.84rem;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;}
 
     /* ---------- Two-column lists ---------- */
     .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
@@ -581,51 +582,51 @@
         <div class="skillset">
           <h3><span class="cat-ico"><svg viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="13" height="11" rx="2"/><path d="M15.5 10l6-3v10l-6-3"/></svg></span>Motion Capture</h3>
           <div class="items">
-            <span class="tool"><span class="bdg" style="background:#E6007E">V</span>Vicon</span>
-            <span class="tool"><span class="bdg" style="background:#558B1E">Q</span>Qualisys</span>
-            <span class="tool"><span class="bdg" style="background:#A8700E">OT</span>OptiTrack</span>
+            <span class="logo" title="Vicon"><img src="assets/logos/vicon.png" alt="Vicon"></span>
+            <span class="logo" title="Qualisys"><img src="assets/logos/qualisys.png" alt="Qualisys"></span>
+            <span class="logo" title="OptiTrack"><img src="assets/logos/optitrack.png" alt="OptiTrack"></span>
           </div>
         </div>
         <div class="skillset">
           <h3><span class="cat-ico"><svg viewBox="0 0 24 24"><path d="M12 2.5l9 5v9l-9 5-9-5v-9z"/><path d="M12 12l9-4.5M12 12v9.5M12 12L3 7.5"/></svg></span>Modeling &amp; Analysis</h3>
           <div class="items">
-            <span class="tool"><span class="bdg" style="background:#1683C2">V3D</span>Visual3D</span>
-            <span class="tool"><span class="bdg" style="background:#C0392B">AB</span>AnyBody Modeling System</span>
-            <span class="tool"><span class="bdg" style="background:#C96A2A">M</span>MATLAB</span>
-            <span class="tool"><span class="bdg" style="background:#2E9B57">LV</span>LabVIEW</span>
+            <span class="logo is-mono" title="Visual3D"><span class="mono" style="background:#1683C2">V3D</span></span>
+            <span class="logo" title="AnyBody Modeling System"><img src="assets/logos/anybody.png" alt="AnyBody Modeling System"></span>
+            <span class="logo" title="MATLAB"><img src="assets/logos/matlab.png" alt="MATLAB"></span>
+            <span class="logo" title="LabVIEW (NI)"><img src="assets/logos/ni.png" alt="LabVIEW — National Instruments"></span>
           </div>
         </div>
         <div class="skillset">
           <h3><span class="cat-ico"><svg viewBox="0 0 24 24"><path d="M12 3v8M8.5 7.5L12 11l3.5-3.5"/><rect x="4" y="15" width="16" height="4" rx="1.5"/></svg></span>Force &amp; Pressure</h3>
           <div class="items">
-            <span class="tool"><span class="bdg" style="background:#1D4E89">A</span>AMTI</span>
-            <span class="tool"><span class="bdg" style="background:#0086B5">K</span>Kistler</span>
-            <span class="tool"><span class="bdg" style="background:#1D4E89">AT</span>AMTI Instrumented Treadmill</span>
-            <span class="tool"><span class="bdg" style="background:#0E9488">P</span>Pedar</span>
-            <span class="tool"><span class="bdg" style="background:#B3242F">X</span>XSENSOR</span>
-            <span class="tool"><span class="bdg" style="background:#D72631">F</span>FUTEK</span>
+            <span class="logo" title="AMTI"><img src="assets/logos/amti.png" alt="AMTI"></span>
+            <span class="logo" title="Kistler"><img src="assets/logos/kistler.png" alt="Kistler"></span>
+            <span class="logo" title="AMTI Instrumented Treadmill"><img src="assets/logos/amti.png" alt="AMTI Instrumented Treadmill"></span>
+            <span class="logo" title="Pedar (novel)"><img src="assets/logos/novel.png" alt="Pedar by novel"></span>
+            <span class="logo" title="XSENSOR"><img src="assets/logos/xsensor.png" alt="XSENSOR"></span>
+            <span class="logo" title="FUTEK"><img src="assets/logos/futek.png" alt="FUTEK"></span>
           </div>
         </div>
         <div class="skillset">
           <h3><span class="cat-ico"><svg viewBox="0 0 24 24"><path d="M2.5 12h4l2.2-6.5 3.8 13 2.2-6.5h4.3"/></svg></span>Electromyography</h3>
           <div class="items">
-            <span class="tool"><span class="bdg" style="background:#00833E">D</span>Delsys</span>
-            <span class="tool"><span class="bdg" style="background:#00529B">N</span>Noraxon</span>
+            <span class="logo" title="Delsys"><img src="assets/logos/delsys.png" alt="Delsys"></span>
+            <span class="logo" title="Noraxon"><img src="assets/logos/noraxon.png" alt="Noraxon"></span>
           </div>
         </div>
         <div class="skillset">
           <h3><span class="cat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="3.6" ry="9"/></svg></span>Inertial &amp; Dynamometry</h3>
           <div class="items">
-            <span class="tool"><span class="bdg" style="background:#D81E05">X</span>Xsens IMU</span>
-            <span class="tool"><span class="bdg" style="background:#00549F">B</span>Biodex System 4</span>
+            <span class="logo" title="Xsens IMU"><img src="assets/logos/xsens.png" alt="Xsens IMU"></span>
+            <span class="logo is-mono" title="Biodex System 4"><span class="mono" style="background:#00549F">B</span></span>
           </div>
         </div>
         <div class="skillset">
           <h3><span class="cat-ico"><svg viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><path d="M9.5 2v3M14.5 2v3M9.5 19v3M14.5 19v3M2 9.5h3M2 14.5h3M19 9.5h3M19 14.5h3"/></svg></span>Instrumentation &amp; Imaging</h3>
           <div class="items">
-            <span class="tool"><span class="bdg" style="background:#2E9B57">NI</span>NI myDAQ</span>
-            <span class="tool"><span class="bdg" style="background:#2E9B57">NI</span>NI USB-6255</span>
-            <span class="tool"><span class="bdg" style="background:#C8102E">H</span>Ultrasonography (Hitachi Aloka)</span>
+            <span class="logo" title="NI myDAQ"><img src="assets/logos/ni.png" alt="NI myDAQ"></span>
+            <span class="logo" title="NI USB-6255"><img src="assets/logos/ni.png" alt="NI USB-6255"></span>
+            <span class="logo is-mono" title="Ultrasonography (Hitachi Aloka)"><span class="mono" style="background:#C8102E">H</span></span>
           </div>
         </div>
       </div>
