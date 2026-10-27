@@ -120,6 +120,8 @@
 
     /* ---------- Cards ---------- */
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
+    #hl-grid .card:nth-child(n+7){display:none;}
+    #hl-grid.show-all .card:nth-child(n+7){display:block;}
     .card{
       background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
       padding:22px 22px 20px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;
@@ -372,7 +374,7 @@
   <section id="research">
     <div class="container">
       <h2 class="reveal">Research Highlights</h2>
-      <div class="grid">
+      <div class="grid" id="hl-grid">
         <div class="card reveal">
           <div class="card-media" data-media data-vids="assets/walker/1.mp4?v=2">
             <img class="gm-img" src="assets/walker/photo.jpg?v=2" alt="Walker with cable-driven leg assistance during walking" loading="lazy">
@@ -425,6 +427,14 @@
         </div>
         <div class="card reveal">
           <div class="card-media fit-contain">
+            <img class="gm-img" src="assets/footwear/photo.jpg" alt="High-collar shoe and ankle support test figure" loading="lazy">
+          </div>
+          <h3>High-Collar Shoe for Ankle Sprain Prevention</h3>
+          <p>Custom high-collar shoe and active variable-compression footwear to improve leg stiffness and prevent ankle sprain injuries.</p>
+          <a class="venue" href="https://www.mdpi.com/2313-7673/8/3/274" target="_blank" rel="noopener">Biomimetics · PLOS ONE, 2023<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
+        </div>
+        <div class="card reveal">
+          <div class="card-media fit-contain">
             <img class="gm-img" src="assets/realtime/photo.jpg" alt="Metabolic cost adaptation over exposure time" loading="lazy">
           </div>
           <h3>Real-Time Hip Exosuit Adaptation via Deep Learning</h3>
@@ -432,15 +442,11 @@
             long short-term memory deep-learning models.</p>
           <a class="venue" href="https://www.mdpi.com/2313-7673/11/2/96" target="_blank" rel="noopener">Biomimetics, 2026<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
         </div>
-        <div class="card reveal">
-          <div class="card-media fit-contain">
-            <img class="gm-img" src="assets/footwear/photo.jpg" alt="High-collar shoe and ankle support test figure" loading="lazy">
-          </div>
-          <h3>High-Collar Shoe for Ankle Sprain Prevention</h3>
-          <p>Custom high-collar shoe and active variable-compression footwear to improve leg stiffness and prevent ankle sprain injuries.</p>
-          <a class="venue" href="https://www.mdpi.com/2313-7673/8/3/274" target="_blank" rel="noopener">Biomimetics · PLOS ONE, 2023<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></a>
-        </div>
       </div>
+      <button class="more-btn" type="button" data-more="#hl-grid" data-more-label="View 1 more highlight" data-less-label="Show fewer">
+        <span class="more-label">View 1 more highlight</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
   </section>
 
