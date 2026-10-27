@@ -120,6 +120,9 @@
 
     /* ---------- Cards ---------- */
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
+    #hl-grid .card{display:flex;flex-direction:column;}
+    #hl-grid .card p{margin-bottom:.7rem;}
+    #hl-grid .card .venue{margin-top:auto;align-self:flex-start;}
     #hl-grid .card:nth-child(n+7){display:none;}
     #hl-grid.show-all .card:nth-child(n+7){display:block;}
     .card{
@@ -382,8 +385,8 @@
             <span class="gm-hint">&#9654; Hover to play</span>
           </div>
           <h3>Walker Active Assistance</h3>
-          <p>Choosing the right cuff height and pull angle kept 86% of the hip assistance while cutting unwanted knee
-            resistance by 70%.</p>
+          <p>A walker that does more than hold you up: cables from its frame gently pull the lower leg forward to help the hip
+            swing the leg with each step.</p>
           <span class="venue">In progress</span>
         </div>
         <div class="card reveal">
